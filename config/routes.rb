@@ -1,9 +1,16 @@
 Ink::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users, :only => [:create, :new, :edit, :show, :update, :destroy]
+  resources :trees, :only => [:index, :show] do
+    resources :sketches, :only => [:create, :new, :show] do
+      resources :votes, :only => [:create]
+    end
+  end
+
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'tree#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
