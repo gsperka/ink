@@ -2,7 +2,7 @@ Ink::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users, :only => [:create, :new, :edit, :show, :update, :destroy]
-  resources :trees, :only => [:index, :show] do
+  resources :trees, :only => [:index, :show, :create, :new] do
     resources :sketches, :only => [:create, :new, :show] do
       resources :votes, :only => [:create]
     end
