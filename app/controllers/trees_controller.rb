@@ -10,7 +10,8 @@ class TreesController < ApplicationController
   def create
     tree = Tree.create()
     sketch = Sketch.create(tree_id: tree.id, url: params[:sketch_json], user_id: current_user.id)
-
+    tree.origin_id = sketch.id
+    tree.save
   end
 
   def show
