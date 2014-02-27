@@ -1,0 +1,18 @@
+<% if session[:current_user_id] == nil %>
+  <div class='canvas'>
+  </div>
+<% end %>
+
+<div class='popular'>
+  <%= link_to 'Tree Show', tree_path(1) %> <!-- temp link -->
+  <% @popular.each do |tree| %>
+    <img class='sample_sketch' src='<%= tree.random_sketch.url %>'>
+  <% end %>
+</div>
+
+<div class='recently_added'>
+  <%= link_to 'Sketch Show', tree_sketch_path(1,1) %> <!-- temp link, tree_sketch_path(tree_id, sketch_id) -->
+  <% @latest.each do |sketch| %>
+    <img class='latest_sketch' src='<%= sketch.url %>'>
+  <% end %>
+</div>
