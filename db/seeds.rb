@@ -1,4 +1,4 @@
-User.create(username: 'user', password_digest: 'password', password_confirmation: 'password')
+User.create(username: 'user', password: 'password', password_confirmation: 'password')
 Tree.create(origin_id: 1)
 Sketch.create(tree_id: 1, url: 'http://www.cbssports.com/images/collegefootball/squirrelheisman.jpg')
 1.upto(10) do |n|
