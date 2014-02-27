@@ -1,14 +1,15 @@
 class Tree < ActiveRecord::Base
+  has_many :sketches
+
   def self.by_vote
 
   end
 
   def random_sketch
-    sketch = Sketch.where(tree_id: self.id).last(5).sample
-    if sketch == nil
-      self.random_sketch
+    if self.sketches.count < 5
+      self.sketches.last
     else
-      sketch
+      self.sketches.last(5).sample
     end
   end
 end
