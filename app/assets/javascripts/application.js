@@ -4,7 +4,7 @@
 //= require_tree .
 
 var onLoad = function() {
-  var modal = new Modal();
+  var modal = new Modal('body');
 }
 
 $(document).ready(onLoad);
