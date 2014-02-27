@@ -1,0 +1,20 @@
+#overlay {
+  z-index: 39;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.7);
+}
+
+#login_modal {
+  z-index: 40;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  padding: 30px 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
