@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140226235041) do
   create_table "sketches", force: true do |t|
     t.integer  "user_id"
     t.integer  "tree_id"
-    t.integer  "sketch_id"
+    t.integer  "parent_id"
     t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
