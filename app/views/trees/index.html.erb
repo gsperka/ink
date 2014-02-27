@@ -4,8 +4,6 @@
   </div>
 <% end %>
 
-<%= render "sketches/blank_canvas" # test canvas for now, to be moved to session conditional %>
-
 <div class='popular'>
   <%= link_to 'Tree Show', tree_path(1) %> <!-- temp link -->
   <% @popular.each do |tree| %>

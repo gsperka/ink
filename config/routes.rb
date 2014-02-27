@@ -8,7 +8,6 @@ Ink::Application.routes.draw do
     end
   end
 
-
   # You can have the root of your site routed with "root"
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
