@@ -1,0 +1,12 @@
+<nav class="nav-links">
+  <ul>
+    <li><%= link_to "Ink", root_path, :id => 'logo' %></li>
+    <% if session[:current_user_id] %>
+      <li id="logout"><%= link_to "Sign Out", logout_path %></li>
+      <li id="profile_link">Welcome, <%=User.find(session[:current_user_id]).username.capitalize%></li>
+    <%else%>
+      <li><%= link_to "Sign Up", new_user_path %></li>
+      <li><%= link_to "Sign In", login_path %></li>
+    <%end%>
+  </ul>
+</nav>
