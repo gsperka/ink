@@ -9,6 +9,13 @@
 <body>
 
 <%= render '/layouts/navbar' %>
+
+<div id='overlay'></div>
+
+<div id='login_modal'>
+  <%= render '/sessions/new' %>
+</div>
+
 <%= yield %>
 
 </body>
