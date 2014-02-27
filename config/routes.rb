@@ -10,7 +10,12 @@ Ink::Application.routes.draw do
 
 
   # You can have the root of your site routed with "root"
-  root 'tree#index'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/signup' => 'users#new'
+  get '/logout' => 'sessions#logout'
+  
+  root 'trees#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
