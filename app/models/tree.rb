@@ -3,7 +3,7 @@ class Tree < ActiveRecord::Base
 
   end
 
-  def self.random_sketch
+  def random_sketch
     sketch = Sketch.where(tree_id: self.id).last(5).sample
     if sketch == nil
       self.random_sketch
