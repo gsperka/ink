@@ -1,5 +1,4 @@
 <% @tree.sketches.each_with_index do |sketch, index| %>
-  <% # this might need to be an edit route since the new route doesn't usually take 2 args %>
   <a href="<%= tree_sketch_path(@tree, sketch) %>">
     <canvas width="600" height="600" class="tree-view-sketches" id="sketch-<%= index %>"></canvas>
   </a>

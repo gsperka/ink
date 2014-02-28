@@ -33,7 +33,17 @@
 
 <div class='children_picture'>
   <h1>Children</h1>
-  <% @sketch.children.each do |children| %>
+  <% @sketch.children.each_with_index do |children, index| %>
+    <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
+      <canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas>
+    </a>
+    <script type="text/javascript">
+      var jsonString = '<%= raw children.url %>';
+      var sketchId = "sketch-" + "<%= index %>";
+      sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.children').css({'height': '300px', 'width': '300px'})
+    </script>
   <% end %>
 </div>
 
