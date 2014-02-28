@@ -12,7 +12,7 @@
     <p>Click any sketch to see everything in its ancestory.</p>
 
     <script type="text/javascript">
-    var jsonString = '<%= raw tree.sketches.last.url %>';
+    var jsonString = '<%= raw tree.sketches.last.json_data %>';
     var treeId = "tree-" + "<%= index %>";
     sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
@@ -25,7 +25,7 @@
 
   <% @latest.each do |sketch| %>
   <%= javascript_tag do %>
-  window.sketch = <%= raw sketch.url.to_json %>
+  window.sketch = <%= raw sketch.json_data.to_json %>
   <% end %>
   <% end %>
 </div>

@@ -22,21 +22,23 @@ $(document).ready(function(){
           window.location.replace('/trees/' + response)
         }
       });
-    } else {
-      var tree = {sketch_json: sketchInfo, parent_id: parent_id};
-      $.ajax({
-        method: "POST",
-        url: "/trees/" + tree_id + "/sketches",
-        data: tree,
-        success: function(response){
-          window.location.replace('/trees/' + tree_id)
-        }
-      });
+    } 
+
+    else {
+      if(parentSketch === sketchInfo) alert('Cannot submit without any contribution');
+      else {
+        var tree = {sketch_json: sketchInfo, parent_id: parent_id};
+        $.ajax({
+          method: "POST",
+          url: "/trees/" + tree_id + "/sketches",
+          data: tree,
+          success: function(response){
+            window.location.replace('/trees/' + tree_id)
+          } 
+        });
+      };
     }
   });
-
-
-
 });
 
 

@@ -5,7 +5,7 @@
   </a>
   <p>Sketch by: <%= sketch.user.username %> — (Click any sketch to see its immediate family.)</p>
   <script type="text/javascript">
-    var jsonString = '<%= raw sketch.url %>';
+    var jsonString = '<%= raw sketch.json_data %>';
     var sketchId = "sketch-" + "<%= index %>";
     sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));

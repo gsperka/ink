@@ -3,7 +3,7 @@ class CreateSketches < ActiveRecord::Migration
     create_table :sketches do |t|
       t.belongs_to :user
       t.belongs_to :tree
-      t.text :url
+      t.text :json_data
       t.string :parent_id
 
       t.timestamps
