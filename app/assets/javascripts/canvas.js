@@ -10,9 +10,7 @@ $(document).ready(function(){
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
     console.log("sketch submit button clicked");
-    console.log(sketchInfo);
     var tree = {sketch_json: sketchInfo};
-    console.log(typeof lastSketch === 'undefined');
     if (typeof lastSketch === 'undefined') {
       console.log("I am running the if part")
       $.ajax({
@@ -20,7 +18,7 @@ $(document).ready(function(){
               url: "/trees",
               data: tree,
               success: function(){
-                console.log("Great success!");
+                console.log("I'm back from the server creating a new tree");
               }
       });
     } else {
@@ -30,9 +28,8 @@ $(document).ready(function(){
               url: "/trees/2/sketches",
               data: tree,
               success: function(response){
-                console.log(response);
-              },
-              dataType: "json"
+                $("body").html(response);
+              }
       });
     }
 
