@@ -12,4 +12,8 @@ class Tree < ActiveRecord::Base
       self.sketches.last(5).sample
     end
   end
+
+  def last_sketch
+    self.sketches.last.url
+  end
 end

@@ -3,9 +3,9 @@
 //= require turbolinks
 //= require_tree .
 
-var onLoad = function() {
-  var modal = new Modal('body');
-}
+// var onLoad = function() {
+//   var modal = new Modal('body');
+// }
 
-$(document).ready(onLoad);
-$(window).bind('page:change', onLoad);
+// $(document).ready(onLoad);
+// $(window).bind('page:change', onLoad);
