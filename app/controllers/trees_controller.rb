@@ -1,6 +1,6 @@
 class TreesController < ApplicationController
   def index
-    @popular = Tree.all.limit(5)
+    @popular = Tree.all.limit(20)
     @latest = Sketch.all.last(5)
   end
 
