@@ -20,7 +20,7 @@ $(document).ready(function(){
         data: tree,
         dataType: 'json',
         success: function(response){
-          console.log(response);
+          window.location.replace('/trees/' + response)
         }
       });
     } else {
