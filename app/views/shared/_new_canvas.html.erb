@@ -1,3 +1,7 @@
+<% if logged_in? %>
+  <button id="sketch-submit">Save this sketch</button>
+<% else %>
+  <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
+<% end %>
 <canvas width="600" height="600" id="canvas-partial-box"></canvas>
 
-<button id="sketch-submit">Save this sketch</button>

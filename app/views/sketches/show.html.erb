@@ -9,10 +9,10 @@
     var sketchId = "sketch_parent";
     sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.parent').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
+    $('.parent').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
   </script>
-
   <% end %>
+  <p>Click this sketch to see its immediate family.</p>
 </div>
 
 <div class='sketch_picture'>
@@ -25,10 +25,9 @@
     var sketchId = "sketch";
     sketchCanvas = new fabric.StaticCanvas(sketchId);
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.sketch').css({'height': '450px', 'width': '450px', 'border': '1px solid black'})
-
+    $('.sketch').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
   </script>
-
+  <p>Click this sketch to give birth to its child.</p>
 </div>
 
 <div class='children_picture'>
@@ -42,9 +41,10 @@
       var sketchId = "sketch-" + "<%= index %>";
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-      $('.children').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
+      $('.children').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
     </script>
   <% end %>
+  <p>Click any of these sketches to see their immediate family.</p>
 </div>
 
 <%= link_to 'Go Back to Tree', tree_path(@tree.id) %>
