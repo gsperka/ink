@@ -1,10 +1,21 @@
 <div class='parent_picture'>
   <% if @sketch.parent != nil %>
+  <h1>Parent</h1>
+  <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
+    <canvas width="600" height="600" class="tree-view-sketches" id="sketch_parent"></canvas>
+  </a>
+  <script type="text/javascript">
+    var jsonString = '<%= raw @sketch.parent.url %>';
+    var sketchId = "sketch_parent";
+    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+  </script>
+
   <% end %>
 </div>
 
 <div class='sketch_picture'>
-
+  <h1>Sketch</h1>
   <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
     <canvas width="600" height="600" class="tree-view-sketches" id="sketch"></canvas>
   </a>
@@ -18,6 +29,7 @@
 </div>
 
 <div class='children_picture'>
+  <h1>Children</h1>
   <% @sketch.children.each do |children| %>
   <% end %>
 </div>
