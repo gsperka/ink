@@ -14,7 +14,7 @@ class TreesController < ApplicationController
     tree.save
     
     respond_to do |format|
-      format.json { render :json => tree.id}
+      format.json { render :json => tree.id }
     end
   end
 
