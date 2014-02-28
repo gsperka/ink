@@ -1,7 +1,6 @@
-<canvas width="600" height="600" id="canvas"></canvas>
-<% if session[:current_user_id] == nil %>
+<% if !logged_in? %>
   <div class='canvas'>
-    <%= render "new" %>
+    <%= render "/shared/new_canvas" %>
   </div>
 <% end %>
 
