@@ -3,7 +3,6 @@ $(document).ready(function(){
 
 
   var parentSketch = $("#parent-sketch-data").val();
-  console.log(parent)
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
