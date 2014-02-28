@@ -1,6 +1,7 @@
 var fabcanvas;
 $(document).ready(function(){
 
+
   var lastSketch = $("#last-sketch-data").val();
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
@@ -24,7 +25,7 @@ $(document).ready(function(){
       console.log("I am running the else part")
       $.ajax({
         method: "POST",
-        url: "/trees/2/sketches",
+        url: "/trees/" + tree_id + "/sketches",
         data: tree,
         success: function(response){
           $("body").html(response);

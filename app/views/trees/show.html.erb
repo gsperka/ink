@@ -4,7 +4,7 @@
     var jsonString = '<%= raw sketch.url %>';
     var sketchId = "sketch-" + "<%= index %>";
     console.log(sketchId);
-    sketchCanvas = new fabric.Canvas(sketchId, {isDrawingMode: false});
+    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
   </script>
 <% end %>
