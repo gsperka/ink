@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 
   var lastSketch = $("#last-sketch-data").val();
+  console.log(lastSketch);
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(lastSketch, fabcanvas.renderAll.bind(fabcanvas));
@@ -17,8 +18,9 @@ $(document).ready(function(){
         method: "POST",
         url: "/trees",
         data: tree,
-        success: function(){
-          console.log("I'm back from the server creating a new tree");
+        dataType: 'json',
+        success: function(response){
+          console.log(response);
         }
       });
     } else {
@@ -28,7 +30,7 @@ $(document).ready(function(){
         url: "/trees/" + tree_id + "/sketches",
         data: tree,
         success: function(response){
-          $("body").html(response);
+          window.location.replace('/trees/' + tree_id)
         }
       });
     }
