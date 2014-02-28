@@ -7,5 +7,5 @@
 //   var modal = new Modal('body');
 // }
 
-$(document).ready(onLoad);
-$(window).bind('page:change', onLoad);
+// $(document).ready(onLoad);
+// $(window).bind('page:change', onLoad);

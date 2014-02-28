@@ -1,7 +1,6 @@
 var fabcanvas;
 $(document).ready(function(){
 
-
   var lastSketch = $("#last-sketch-data").val();
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
@@ -14,26 +13,28 @@ $(document).ready(function(){
     if (typeof lastSketch === 'undefined') {
       console.log("I am running the if part")
       $.ajax({
-              method: "POST",
-              url: "/trees",
-              data: tree,
-              success: function(){
-                console.log("I'm back from the server creating a new tree");
-              }
+        method: "POST",
+        url: "/trees",
+        data: tree,
+        success: function(){
+          console.log("I'm back from the server creating a new tree");
+        }
       });
     } else {
-            console.log("I am running the else part")
+      console.log("I am running the else part")
       $.ajax({
-              method: "POST",
-              url: "/trees/2/sketches",
-              data: tree,
-              success: function(response){
-                $("body").html(response);
-              }
+        method: "POST",
+        url: "/trees/2/sketches",
+        data: tree,
+        success: function(response){
+          $("body").html(response);
+        }
       });
     }
-
   });
+
+
+
 });
 
 

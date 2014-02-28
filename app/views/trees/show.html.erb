@@ -1,3 +1,11 @@
 <% @tree.sketches.each_with_index do |sketch, index| %>
-  <p>Sketch <%= sketch.id %> image goes here</p>
+  <canvas width="600" height="600" class="tree-view-sketches" id="sketch-<%= index %>"></canvas>
+  <script type="text/javascript">
+    var jsonString = '<%= raw sketch.url %>';
+    var sketchId = "sketch-" + "<%= index %>";
+    console.log(sketchId);
+    sketchCanvas = new fabric.Canvas(sketchId, {isDrawingMode: false});
+    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+  </script>
 <% end %>
+
