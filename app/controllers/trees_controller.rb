@@ -12,7 +12,10 @@ class TreesController < ApplicationController
     sketch = Sketch.create(tree_id: tree.id, url: params[:sketch_json], user_id: current_user.id)
     tree.origin_id = sketch.id
     tree.save
-    redirect_to root_path
+    
+    respond_to do |format|
+      format.json { render :json => tree.id}
+    end
   end
 
   def show

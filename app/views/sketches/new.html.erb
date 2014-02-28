@@ -1,8 +1,9 @@
   <%= javascript_tag do %>
     window.tree_id = <%= raw @tree.id.to_json %>
+    window.parent_id = <%= raw params[:parent_id].to_json %>
   <% end %>
 
   <form>
-    <input type="hidden" id="last-sketch-data" name="last-sketch-data" value='<%= @tree.last_sketch %>'>
+    <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).url %>'>
   </form>
   <%= render "/shared/new_canvas" %>

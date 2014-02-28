@@ -1,16 +1,49 @@
 <div class='parent_picture'>
   <% if @sketch.parent != nil %>
-    <img src='<%= @sketch.parent.url %>'/>
+  <h1>Parent</h1>
+  <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
+    <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
+  </a>
+  <script type="text/javascript">
+    var jsonString = '<%= raw @sketch.parent.url %>';
+    var sketchId = "sketch_parent";
+    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+    $('.parent').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
+  </script>
+
   <% end %>
 </div>
 
 <div class='sketch_picture'>
-  <img src='<%= @sketch.url %>'/>
+  <h1>Sketch</h1>
+  <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
+    <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
+  </a>
+  <script type="text/javascript">
+    var jsonString = '<%= raw @sketch.url %>';
+    var sketchId = "sketch";
+    sketchCanvas = new fabric.StaticCanvas(sketchId);
+    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+    $('.sketch').css({'height': '450px', 'width': '450px', 'border': '1px solid black'})
+
+  </script>
+
 </div>
 
 <div class='children_picture'>
-  <% @sketch.children.each do |children| %>
-    <img src='<%= children.url %>'/>
+  <h1>Children</h1>
+  <% @sketch.children.each_with_index do |children, index| %>
+    <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
+      <canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas>
+    </a>
+    <script type="text/javascript">
+      var jsonString = '<%= raw children.url %>';
+      var sketchId = "sketch-" + "<%= index %>";
+      sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.children').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
+    </script>
   <% end %>
 </div>
 
