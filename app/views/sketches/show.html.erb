@@ -5,7 +5,7 @@
     <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
   </a>
   <script type="text/javascript">
-    var jsonString = '<%= raw @sketch.parent.url %>';
+    var jsonString = '<%= raw @sketch.parent.json_data %>';
     var sketchId = "sketch_parent";
     sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
@@ -21,7 +21,7 @@
     <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
   </a>
   <script type="text/javascript">
-    var jsonString = '<%= raw @sketch.url %>';
+    var jsonString = '<%= raw @sketch.json_data %>';
     var sketchId = "sketch";
     sketchCanvas = new fabric.StaticCanvas(sketchId);
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
@@ -37,7 +37,7 @@
       <canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas>
     </a>
     <script type="text/javascript">
-      var jsonString = '<%= raw children.url %>';
+      var jsonString = '<%= raw children.json_data %>';
       var sketchId = "sketch-" + "<%= index %>";
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));

@@ -14,6 +14,6 @@ class Tree < ActiveRecord::Base
   end
 
   def last_sketch
-    self.sketches.last.url
+    self.sketches.last.json_data
   end
 end
