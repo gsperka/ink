@@ -19,6 +19,7 @@
     console.log(treeId);
     sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+    $('.tree-view-sketches').css({'border': '1px solid black'})
     </script>
   <% end %>
 </div>
