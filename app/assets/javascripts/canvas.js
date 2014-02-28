@@ -2,18 +2,17 @@ var fabcanvas;
 $(document).ready(function(){
 
 
-  var lastSketch = $("#last-sketch-data").val();
-  console.log(lastSketch);
+  var parentSketch = $("#parent-sketch-data").val();
+  console.log(parent)
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
-  fabcanvas.loadFromJSON(lastSketch, fabcanvas.renderAll.bind(fabcanvas));
+  fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
 
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
-    console.log("sketch submit button clicked");
-    var tree = {sketch_json: sketchInfo};
-    if (typeof lastSketch === 'undefined') {
-      console.log("I am running the if part")
+    
+    if (typeof parentSketch === 'undefined') {
+      var tree = {sketch_json: sketchInfo};
       $.ajax({
         method: "POST",
         url: "/trees",
@@ -24,7 +23,7 @@ $(document).ready(function(){
         }
       });
     } else {
-      console.log("I am running the else part")
+      var tree = {sketch_json: sketchInfo, parent_id: parent_id};
       $.ajax({
         method: "POST",
         url: "/trees/" + tree_id + "/sketches",

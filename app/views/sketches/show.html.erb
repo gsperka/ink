@@ -1,6 +1,5 @@
 <div class='parent_picture'>
   <% if @sketch.parent != nil %>
-    <img src='<%= @sketch.parent.url %>'/>
   <% end %>
 </div>
 
@@ -20,7 +19,6 @@
 
 <div class='children_picture'>
   <% @sketch.children.each do |children| %>
-    <img src='<%= children.url %>'/>
   <% end %>
 </div>
 
