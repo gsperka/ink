@@ -5,7 +5,17 @@
 </div>
 
 <div class='sketch_picture'>
-  <img src='<%= @sketch.url %>'/>
+
+  <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
+    <canvas width="600" height="600" class="tree-view-sketches" id="sketch"></canvas>
+  </a>
+  <script type="text/javascript">
+    var jsonString = '<%= raw @sketch.url %>';
+    var sketchId = "sketch";
+    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+  </script>
+
 </div>
 
 <div class='children_picture'>
