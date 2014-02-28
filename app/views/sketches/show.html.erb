@@ -2,13 +2,14 @@
   <% if @sketch.parent != nil %>
   <h1>Parent</h1>
   <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
-    <canvas width="600" height="600" class="tree-view-sketches" id="sketch_parent"></canvas>
+    <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
   </a>
   <script type="text/javascript">
     var jsonString = '<%= raw @sketch.parent.url %>';
     var sketchId = "sketch_parent";
     sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+    $('.parent').css({'height': '300px', 'width': '300px'})
   </script>
 
   <% end %>
@@ -17,13 +18,15 @@
 <div class='sketch_picture'>
   <h1>Sketch</h1>
   <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
-    <canvas width="600" height="600" class="tree-view-sketches" id="sketch"></canvas>
+    <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
   </a>
   <script type="text/javascript">
     var jsonString = '<%= raw @sketch.url %>';
     var sketchId = "sketch";
-    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+    sketchCanvas = new fabric.StaticCanvas(sketchId);
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+    $('.sketch').css({'height': '450px', 'width': '450px'})
+
   </script>
 
 </div>
