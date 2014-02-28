@@ -1,7 +1,9 @@
+<h2>All sketches in this tree</h2>
 <% @tree.sketches.each_with_index do |sketch, index| %>
   <a href="<%= tree_sketch_path(@tree, sketch) %>">
     <canvas width="600" height="600" class="tree-view-sketches" id="sketch-<%= index %>"></canvas>
   </a>
+  <p>Sketch by: <%= sketch.user.username %> — (Click any sketch to see its immediate family.)</p>
   <script type="text/javascript">
     var jsonString = '<%= raw sketch.url %>';
     var sketchId = "sketch-" + "<%= index %>";

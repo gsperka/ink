@@ -6,10 +6,11 @@ $(document).ready(function(){
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
+  fabcanvas.freeDrawingBrush.width = 5;
 
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
-    
+
     if (typeof parentSketch === 'undefined') {
       var tree = {sketch_json: sketchInfo};
       $.ajax({
