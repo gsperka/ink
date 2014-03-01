@@ -7,7 +7,7 @@ class SketchesController < ApplicationController
   def create
     @tree = Tree.find(params[:tree_id])
     sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json], user_id: current_user.id)
-    sketch.tree_data = Sketch.find(parent_id).tree_data << sketch.id
+    sketch.tree_data = Sketch.find(parent_id).tree_data + "," + sketch.id
     sketch.save
     redirect_to tree_path(@tree.id)
   end
