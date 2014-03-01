@@ -2,17 +2,21 @@
   window.treeIDs = <%= raw @tree.to_json %>
 <% end %>
 
+<div id='tree-json'>
+</div>
+
 <script type="text/javascript">
 $(document).ready(function() {
+  console.log(treeIDs)
 
   var treeID
   var root = {id:<%= @origin %>, children:[]};
   splitTree(root);
   
-  console.log(root)
+  $('#tree-json').html(JSON.stringify(root))
 
   function splitTree(root) {
-    for (var i=0; i<treeIDs.length; i++) {
+    for (var i=1; i<treeIDs.length; i++) {
       treeID = treeIDs[i].id.split(',');
       children = root.children;
 
