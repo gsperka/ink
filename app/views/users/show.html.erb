@@ -4,7 +4,7 @@
   </ul>
 </nav>
 
-<div class ='past_sketches'>
+<div class ='past_user_sketches'>
    <ul>
   <% @sketches.each_with_index do |sketch, index| %>
     <a href="<%= tree_sketch_path(sketch.tree_id, sketch.id) %>">
