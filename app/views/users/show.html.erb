@@ -3,3 +3,21 @@
     <li> Hi, <%=User.find(session[:current_user_id]).username.capitalize%>. Welcome to your profile page!</li>
   </ul>
 </nav>
+
+<div class ='past_sketches'>
+   <ul>
+  <% @sketches.each_with_index do |sketch, index| %>
+    <a href="<%= tree_sketch_path(sketch.tree_id, sketch.id) %>">
+      <canvas width="600" height="600" class="sketch" id="sketch-<%= index %>"></canvas>
+    </a>
+    <script type="text/javascript">
+      var jsonString = '<%= raw sketch.json_data %>';
+      var sketchId = "sketch-" + "<%= index %>";
+      sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.sketch').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
+    </script>
+  <% end %>
+</div>
+
+
