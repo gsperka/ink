@@ -4,8 +4,8 @@ class CreateSketches < ActiveRecord::Migration
       t.belongs_to :user
       t.belongs_to :tree
       t.text :json_data
+      t.text :tree_data
       t.string :parent_id
-
       t.timestamps
     end
   end
