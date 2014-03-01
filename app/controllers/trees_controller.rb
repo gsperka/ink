@@ -21,6 +21,15 @@ class TreesController < ApplicationController
   end
 
   def show
-    @tree = Tree.find(params[:id])
+    @tree = generate_tree_json(params[:id])
+    @origin = Tree.find(params[:id]).origin_id
+  end
+
+  def generate_tree_json(tree_id)
+    tree = []
+    Tree.find(tree_id.to_i).sketches.each do |sketch|
+      tree << {id: sketch.tree_data}
+    end
+    tree
   end
 end

@@ -1,15 +1,37 @@
-<h2>All sketches in this tree</h2>
-<% @tree.sketches.each_with_index do |sketch, index| %>
-  <a href="<%= tree_sketch_path(@tree, sketch) %>">
-    <canvas width="600" height="600" class="tree-view-sketches" id="sketch-<%= index %>"></canvas>
-  </a>
-  <p>Sketch by: <%= sketch.user.username %> — (Click any sketch to see its immediate family.)</p>
-  <script type="text/javascript">
-    var jsonString = '<%= raw sketch.json_data %>';
-    var sketchId = "sketch-" + "<%= index %>";
-    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
-    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.tree-view-sketches').css({'border': '1px solid black'})
-  </script>
+<%= javascript_tag do %>
+  window.treeIDs = <%= raw @tree.to_json %>
 <% end %>
 
+<script type="text/javascript">
+$(document).ready(function() {
+
+  var treeID
+  var root = {id:<%= @origin %>, children:[]};
+  splitTree(root);
+  
+  console.log(root)
+
+  function splitTree(root) {
+    for (var i=0; i<treeIDs.length; i++) {
+      treeID = treeIDs[i].id.split(',');
+      children = root.children;
+
+      for (var j=0; j<treeID.length; j++) {
+        children = addChild(children, treeID[j]);      
+      }
+    }
+  }
+
+  function addChild(children, name) {
+    for (var i=0; i<children.length; i++) {
+      if (children[i].name == name) {
+        return children[i].children;        
+      }
+    }
+    children.push({'id': name, 'children':[]});
+    return children[children.length - 1].children;
+  }
+
+})
+  
+</script>
