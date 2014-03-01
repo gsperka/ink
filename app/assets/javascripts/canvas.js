@@ -26,30 +26,32 @@ $(document).ready(function(){
     fabcanvas.freeDrawingBrush.width = 35
   });
   $("#red").mousedown(function(){
-    fabcanvas.freeDrawingBrush.color = "red"
+    fabcanvas.freeDrawingBrush.color = "#E31623"
   });
   $("#yellow").mousedown(function(){
-    fabcanvas.freeDrawingBrush.color = "yellow"
+    fabcanvas.freeDrawingBrush.color = "#E3E316"
   });
   $("#green").mousedown(function(){
-    fabcanvas.freeDrawingBrush.color = "green"
+    fabcanvas.freeDrawingBrush.color = "#16E341"
   });
   $("#blue").mousedown(function(){
-    fabcanvas.freeDrawingBrush.color = "blue"
+    fabcanvas.freeDrawingBrush.color = "#165EE3"
   });
-
-  //   colorPicker = $('#picker').colpick({
-  //   flat:true,
-  //   layout:'hex',
-  //   submit:0
-  // });
-
-  //   $("#picker").onChange(function(e){
-  //   console.log(e.target.value);
-  //   fabcanvas.freeDrawingBrush.color = e.target.value;
-  // });
-
-
+  $("#black").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "black"
+  });
+  $("#white").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "white"
+  });
+  $("#gray").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#165EE3"
+  });
+  $("#purple").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#7816E3"
+  });
+  $("#orange").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#E36B16"
+  });
 
 
   $(document).on("click", "#sketch-submit", function(){

@@ -1,4 +1,12 @@
+.st-brush-border, .tiny-brush-border, .small-brush-border, .medium-brush-border, .large-brush-border{
+   border:1px, black;
+   border-radius: 50%;
+}
 
+.tiny-brush-border{
+  height: 15px;
+  width: 15px;
+}
 #super-tiny-brush, #tiny-brush, #small-brush, #medium-brush, #large-brush{
   background-color: black;
   margin: 10px;
@@ -34,7 +42,7 @@
   margin-top: 20px;
 }
 
-#red, #yellow, #blue, #green{
+#red, #yellow, #blue, #green, #purple, #black, #gray, #white, #orange{
   height: 20px;
   width: 40px;
   margin: 10px;
@@ -42,16 +50,40 @@
 }
 
 #red{
-  background-color: red;
+  background-color: #E3163F;
 }
 #yellow{
-  background-color: yellow;
+  background-color: #E3E316;
 }
 #blue{
-  background-color: blue;
+  background-color: #165EE3;
 }
 #green{
-  background-color: green;
+  background-color: #16E341;
+}
+
+#purple{
+  background-color: #7816E3;
+}
+
+#orange{
+  background-color: #E36B16;
+}
+
+#black{
+  background-color: black;
+}
+
+#white{
+  background-color: white;
+}
+
+#gray{
+  background-color: #838895 ;
+}
+
+#brown{
+  background-color: #5F3D25;
 }
 
 
