@@ -7,6 +7,20 @@ $(document).ready(function(){
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
   fabcanvas.freeDrawingBrush.width = 5;
+  $("#clear-canvas").click(function() {document.location.reload();});
+  //   colorPicker = $('#picker').colpick({
+  //   flat:true,
+  //   layout:'hex',
+  //   submit:0
+  // });
+
+  //   $("#picker").onChange(function(e){
+  //   console.log(e.target.value);
+  //   fabcanvas.freeDrawingBrush.color = e.target.value;
+  // });
+
+
+
 
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
@@ -22,7 +36,7 @@ $(document).ready(function(){
           window.location.replace('/trees/' + response)
         }
       });
-    } 
+    }
 
     else {
       if(parentSketch === sketchInfo) alert('Cannot submit without any contribution');
@@ -34,7 +48,7 @@ $(document).ready(function(){
           data: tree,
           success: function(response){
             window.location.replace('/trees/' + tree_id)
-          } 
+          }
         });
       };
     }
