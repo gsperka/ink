@@ -6,8 +6,38 @@ $(document).ready(function(){
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
-  fabcanvas.freeDrawingBrush.width = 5;
-  $("#clear-canvas").click(function() {document.location.reload();});
+  $("#clear-canvas").click(function(){
+    document.location.reload();
+  });
+  var brush = fabcanvas.freeDrawingBrush.width = 5;
+  $("#super-tiny-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 2;
+  });
+  $("#tiny-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 5;
+  });
+  $("#small-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 15;
+  });
+  $("#medium-brush").mousedown(function(){
+    fabcanvas.freeDrawingBrush.width = 25;
+  });
+  $("#large-brush").mousedown(function(){
+    fabcanvas.freeDrawingBrush.width = 35
+  });
+  $("#red").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "red"
+  });
+  $("#yellow").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "yellow"
+  });
+  $("#green").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "green"
+  });
+  $("#blue").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "blue"
+  });
+
   //   colorPicker = $('#picker').colpick({
   //   flat:true,
   //   layout:'hex',
