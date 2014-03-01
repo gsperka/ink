@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user].permit(:username, :password, :password_confirmation, :email, :first_name, :last_name))
     if @user.save
-      session[:current_user_id] = user.id
+      session[:current_user_id] = @user.id
       redirect_to root_path
     else
       render 'new'
