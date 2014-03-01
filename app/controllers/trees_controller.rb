@@ -27,7 +27,7 @@ class TreesController < ApplicationController
   def generate_tree_json(tree_id)
     tree = []
     Tree.find(tree_id.to_i).sketches.each do |sketch|
-      tree << {id: sketch.tree_data}
+      tree << {id: sketch.lineage}
     end
     tree
   end
