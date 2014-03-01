@@ -1,5 +1,7 @@
 <% if logged_in? %>
-  <% if Sketch.find(params[:parent_id]).user_id == current_user.id %>
+  <% if params[:parent_id] == nil %>
+    <button id="sketch-submit">Save this sketch</button>
+  <% elsif Sketch.find(params[:parent_id]).user_id == current_user.id %>
     <h3>You cannot edit your own image</h3>
   <% else %>
     <button id="sketch-submit">Save this sketch</button>

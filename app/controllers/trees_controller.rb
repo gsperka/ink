@@ -10,6 +10,7 @@ class TreesController < ApplicationController
   def create
     tree = Tree.create()
     sketch = Sketch.create(tree_id: tree.id, json_data: params[:sketch_json], user_id: current_user.id)
+    sketch.save
     tree.origin_id = sketch.id
     tree.save
     
@@ -20,5 +21,15 @@ class TreesController < ApplicationController
 
   def show
     @tree = Tree.find(params[:id])
+    @tree_json = generate_tree_json(params[:id])
+    @origin = Tree.find(params[:id]).origin_id
+  end
+
+  def generate_tree_json(tree_id)
+    tree = []
+    Tree.find(tree_id.to_i).sketches.each do |sketch|
+      tree << {id: sketch.lineage}
+    end
+    tree
   end
 end
