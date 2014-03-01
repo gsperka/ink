@@ -20,7 +20,8 @@ class TreesController < ApplicationController
   end
 
   def show
-    @tree = generate_tree_json(params[:id])
+    @tree = Tree.find(params[:id])
+    @tree_json = generate_tree_json(params[:id])
     @origin = Tree.find(params[:id]).origin_id
   end
 
