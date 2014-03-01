@@ -18,13 +18,13 @@ $(document).ready(function() {
     }
   }
 
-  function addChild(children, name) {
+  function addChild(children, id) {
     for (var i=0; i<children.length; i++) {
-      if (children[i].name == name) {
+      if (children[i].id == id) {
         return children[i].children;        
       }
     }
-    children.push({'id': name, 'children':[]});
+    children.push({'id': id, 'children':[]});
     return children[children.length - 1].children;
   }
 
