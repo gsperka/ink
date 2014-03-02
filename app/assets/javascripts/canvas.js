@@ -6,7 +6,58 @@ $(document).ready(function(){
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
   fabcanvas.loadFromJSON(parentSketch, fabcanvas.renderAll.bind(fabcanvas));
-  fabcanvas.freeDrawingBrush.width = 5;
+  $("#clear-canvas").click(function(){
+    document.location.reload();
+  });
+  var brush = fabcanvas.freeDrawingBrush.width = 5;
+  $("#super-tiny-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 2;
+  });
+  $("#tiny-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 5;
+  });
+  $("#small-brush").mousedown(function(e){
+    fabcanvas.freeDrawingBrush.width = 15;
+  });
+  $("#medium-brush").mousedown(function(){
+    fabcanvas.freeDrawingBrush.width = 25;
+  });
+  $("#large-brush").mousedown(function(){
+    fabcanvas.freeDrawingBrush.width = 35
+  });
+  $("#red").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#E31623"
+  });
+  $("#yellow").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#E3E316"
+  });
+  $("#green").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#16E341"
+  });
+  $("#blue").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#165EE3"
+  });
+  $("#black").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "black"
+  });
+  $("#white").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "white"
+  });
+  $("#gray").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#838895"
+  });
+  $("#purple").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#7816E3"
+  });
+  $("#orange").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#E36B16"
+  });
+  $("#brown").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#5F3D25"
+  });
+
+
+
 
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
@@ -22,7 +73,7 @@ $(document).ready(function(){
           window.location.replace('/trees/' + response)
         }
       });
-    } 
+    }
 
     else {
       if(parentSketch === sketchInfo) alert('Cannot submit without any contribution');
@@ -34,7 +85,7 @@ $(document).ready(function(){
           data: tree,
           success: function(response){
             window.location.replace('/trees/' + tree_id)
-          } 
+          }
         });
       };
     }

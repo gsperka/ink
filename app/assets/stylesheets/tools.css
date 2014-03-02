@@ -1,0 +1,94 @@
+.st-brush-border, .tiny-brush-border, .small-brush-border, .medium-brush-border, .large-brush-border{
+   border:1px, black;
+   border-radius: 50%;
+}
+
+.tiny-brush-border{
+  height: 15px;
+  width: 15px;
+}
+#super-tiny-brush, #tiny-brush, #small-brush, #medium-brush, #large-brush{
+  background-color: black;
+  margin: 10px;
+  border-radius: 50%;
+}
+#super-tiny-brush{
+  height: 5px;
+  width: 5px;
+}
+#tiny-brush{
+  height: 10px;
+  width: 10px;
+}
+
+#small-brush{
+  height: 15px;
+  width: 15px;
+}
+
+#medium-brush{
+  height: 25px;
+  width: 25px;
+}
+
+#large-brush {
+  height: 35px;
+  width: 35px;
+}
+
+#drawing-tools{
+  display: inline;
+  margin-top: 20px;
+  margin-left: 20px;
+  float:right;
+}
+
+#red, #yellow, #blue, #green, #purple, #black, #gray, #white, #orange, #brown{
+  height: 20px;
+  width: 40px;
+  margin: 10px;
+  border:1px solid black;
+}
+
+#red{
+  background-color: #E3163F;
+}
+#yellow{
+  background-color: #E3E316;
+}
+#blue{
+  background-color: #165EE3;
+}
+#green{
+  background-color: #16E341;
+}
+
+#purple{
+  background-color: #7816E3;
+}
+
+#orange{
+  background-color: #E36B16;
+}
+
+#black{
+  background-color: black;
+}
+
+#white{
+  background-color: white;
+}
+
+#gray{
+  background-color: #838895 ;
+}
+
+#brown{
+  background-color: #5F3D25;
+}
+
+
+
+
+
+
