@@ -16,4 +16,17 @@ class Tree < ActiveRecord::Base
   def last_sketch
     self.sketches.last.json_data
   end
+
+  def all_sketches_json
+    self.sketches.map do |sketch|
+      {sketch.id => sketch.json_data}
+    end.to_json
+  end
+
+  def all_sketches_lineage
+    self.sketches.map do |sketch|
+      {id: sketch.lineage}
+    end.to_json
+  end
+
 end

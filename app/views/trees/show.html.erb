@@ -23,24 +23,23 @@
 </style>
 
 <%= javascript_tag do %>
-  window.treeIDs = <%= raw @tree_json.to_json %>
+  window.treeIDs = <%= raw @tree.all_sketches_lineage %>
   window.origin = <%= @origin.to_json %>
+  window.tID = <%= raw @tree.id %>
 <% end %>
+
+<%= javascript_tag do %>
+  window.allSketchesJSON = <%= raw @tree.all_sketches_json %>
+<% end %>
+
+
 
 <div id='tree-json'>
 </div>
 
-<h2>All sketches in this tree</h2>
-<% @tree.sketches.each_with_index do |sketch, index| %>
-  <a href="<%= tree_sketch_path(@tree, sketch) %>">
-    <canvas width="600" height="600" class="tree-view-sketches" id="sketch-<%= index %>"></canvas>
-  </a>
-  <p>Sketch by: <%= sketch.user.username %> — (Click any sketch to see its immediate family.)</p>
-  <script type="text/javascript">
-    var jsonString = '<%= raw sketch.json_data %>';
-    var sketchId = "sketch-" + "<%= index %>";
-    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
-    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.tree-view-sketches').css({'border': '1px solid black'})
-  </script>
-<% end %>
+
+
+
+
+
+
