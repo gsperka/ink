@@ -37,9 +37,10 @@
 }
 
 #drawing-tools{
-  float:right;
-  margin-right: 250px;
+  display: inline;
   margin-top: 20px;
+  margin-left: 20px;
+  float:right;
 }
 
 #red, #yellow, #blue, #green, #purple, #black, #gray, #white, #orange{

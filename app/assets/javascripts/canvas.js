@@ -44,7 +44,7 @@ $(document).ready(function(){
     fabcanvas.freeDrawingBrush.color = "white"
   });
   $("#gray").mousedown(function(){
-    fabcanvas.freeDrawingBrush.color = "#165EE3"
+    fabcanvas.freeDrawingBrush.color = "#838895"
   });
   $("#purple").mousedown(function(){
     fabcanvas.freeDrawingBrush.color = "#7816E3"
@@ -52,6 +52,7 @@ $(document).ready(function(){
   $("#orange").mousedown(function(){
     fabcanvas.freeDrawingBrush.color = "#E36B16"
   });
+
 
 
   $(document).on("click", "#sketch-submit", function(){
