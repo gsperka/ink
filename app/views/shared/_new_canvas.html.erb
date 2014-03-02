@@ -1,15 +1,16 @@
-<span></span>
+
 
 <% if logged_in? %>
   <% if params[:parent_id] == nil %>
     <button id="sketch-submit">Save this sketch</button>
   <% else %>
     <button id="sketch-submit">Save this sketch</button>
-
   <% end %>
 <% else %>
   <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
 <% end %>
+
+<p> You have <span>1000</span> pixels left<p>
 <div id="format-canvas-elements">
 <div id="drawing-tools">
   <div class="st-brush-border">
@@ -49,7 +50,7 @@ var totalDistance = 0;
 var lastSeenAt = {x: null, y: null};
 var click = false
 
-$('#canvas-div').mousedown(function() {
+$('#canvas-div').mousedown(function(event) {
   click = true;
 })
 
@@ -67,7 +68,7 @@ $('#canvas-div').mousemove(function(event) {
       totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
     }
   }        
-  $('span').text('So far your mouse ran this many pixels:   ' + Math.round(totalDistance));
+  $('span').text(1000 - Math.round(totalDistance));
       
   
   lastSeenAt.x = event.clientX;
