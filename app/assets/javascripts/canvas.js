@@ -52,6 +52,10 @@ $(document).ready(function(){
   $("#orange").mousedown(function(){
     fabcanvas.freeDrawingBrush.color = "#E36B16"
   });
+  $("#brown").mousedown(function(){
+    fabcanvas.freeDrawingBrush.color = "#5F3D25"
+  });
+
 
 
 
