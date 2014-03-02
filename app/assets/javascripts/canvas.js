@@ -61,7 +61,7 @@ $(document).ready(function(){
 
   $(document).on("click", "#sketch-submit", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
-
+     console.log("hey");
     if (typeof parentSketch === 'undefined') {
       var tree = {sketch_json: sketchInfo};
       $.ajax({

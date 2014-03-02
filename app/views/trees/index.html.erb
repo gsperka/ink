@@ -6,11 +6,12 @@
 
 <div class='popular'>
   <% @popular.each_with_index do |tree, index| %>
-    <a href="<%= tree_path(tree.id) %>">
-      <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
-    </a>
-    <p>Click any sketch to see everything in its ancestory.</p>
+  <a href="<%= tree_path(tree.id) %>">
+    <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
+  </a>
+  <p>Click any sketch to see everything in its ancestory.</p>
 
+  <% if tree.sketches.last != nil %>
     <script type="text/javascript">
     var jsonString = '<%= raw tree.sketches.last.json_data %>';
     var treeId = "tree-" + "<%= index %>";
@@ -18,6 +19,7 @@
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
     $('.tree-view-sketches').css({'border': '1px solid black', 'height': '300px', 'width': '300px'})
     </script>
+  <% end %>
   <% end %>
 </div>
 
