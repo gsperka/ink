@@ -1,4 +1,4 @@
-
+<span></span>
 
 <% if logged_in? %>
   <% if params[:parent_id] == nil %>
@@ -43,3 +43,20 @@
   <canvas width="600" height="600" id="canvas-partial-box"></canvas>
 </div>
 </div>
+
+<script type="text/javascript">
+var totalDistance = 0;
+var lastSeenAt = {x: null, y: null};
+
+$('#canvas-div').mousemove(function(event) {
+if(lastSeenAt.x) {
+        totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
+        
+    $('span').text('So far your mouse ran this many pixels:   ' + Math.round(totalDistance));
+    
+    }
+    lastSeenAt.x = event.clientX;
+    lastSeenAt.y = event.clientY;
+});
+ 
+</script>
