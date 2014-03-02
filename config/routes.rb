@@ -1,6 +1,7 @@
 Ink::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :google, only: [:create, :destroy]
   resources :users, :only => [:create, :new, :edit, :show, :update, :destroy]
   resources :trees, :only => [:index, :show, :create, :new] do
     resources :sketches, :only => [:create, :new, :show] do
@@ -9,11 +10,16 @@ Ink::Application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
+  get "google/create"
+  get "google/destroy"
+  get 'auth/:provider/callback', to: 'google#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'google#destroy', as: 'signout'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   get '/logout' => 'sessions#logout'
-  
+
   root 'trees#index'
 
   # Example of regular route:
