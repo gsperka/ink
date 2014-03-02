@@ -21,6 +21,6 @@ class TreesController < ApplicationController
 
   def show
     @tree = Tree.find(params[:id])
-    @origin = Tree.find(params[:id]).origin_id
+    @origin = @tree.origin_id
   end
 end
