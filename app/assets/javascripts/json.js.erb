@@ -88,8 +88,8 @@ $(document).ready(function() {
         .on("click", click);
 
     nodeEnter.append("foreignObject")
-      .attr("width", "155px")
-      .attr("height", "155px")
+      .attr("width", "600px")
+      .attr("height", "600px")
       .append("xhtml:canvas")
       .attr('class', function (d) {
         return 'tree-view-sketches';
@@ -98,8 +98,6 @@ $(document).ready(function() {
          return "sketch-" + d.id;
          })
      .attr("xlink:href" , "#")
-     .attr("width", "75px")
-     .attr("height", "75px")
      .style({'border':'1px solid black'});
 
     nodeEnter.append("circle")
@@ -195,7 +193,7 @@ $(document).ready(function() {
       console.log(sketchId)
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-      // $('.tree-view-sketches').css({'height': '75px', 'width': '75px', 'border': '1px solid black'})
+      $('.tree-view-sketches').css({'height': '75px', 'width': '75px', 'border': '1px solid black'})
     }
     
   }
