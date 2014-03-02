@@ -86,6 +86,22 @@ $(document).ready(function() {
         .attr("class", "node")
         .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
         .on("click", click);
+        console.log('js')
+
+    nodeEnter.append("foreignObject")
+      .attr("width", "155px")
+      .attr("height", "155px")
+      .append("xhtml:canvas")
+      .attr('class', function (d) {
+        return 'tree-view-sketches';
+      })
+      .attr("id", function (d) {
+         return "sketch-" + d.id;
+         })
+     .attr("xlink:href" , "#")
+     .attr("width", "75px")
+     .attr("height", "75px")
+     .style({'border':'1px solid black'});
 
     nodeEnter.append("circle")
         .attr("r", 1e-6)
@@ -97,6 +113,20 @@ $(document).ready(function() {
         .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
         .text(function(d) { return d.id; })
         .style("fill-opacity", 1e-6);
+
+    nodeEnter.append("a")
+      .attr("xlink:href", function (d) { return '/trees/' + tID + "/sketches/" + d.id; })
+      .append("rect")
+      .attr("class", "clickable")
+      .attr("y", -6)
+      .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
+      .attr("width", 50) //2*4.5)
+      .attr("height", 12)
+      .style("fill", "lightsteelblue")
+      .style("fill-opacity", .3)        // set to 1e-6 to make transparent
+      ;
+
+
 
     // Transition nodes to their new position.
     var nodeUpdate = node.transition()
@@ -170,5 +200,7 @@ $(document).ready(function() {
     }
     update(d);
   }
-
+  $('body').on('click', function(event) {
+    loadCanvas();
+});
 })
