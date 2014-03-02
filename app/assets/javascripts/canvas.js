@@ -11,7 +11,7 @@ $(document).ready(function(){
   });
   var brush = fabcanvas.freeDrawingBrush.width = 5;
   $("#super-tiny-brush").mousedown(function(e){
-    brush = 2;
+    fabcanvas.freeDrawingBrush.width = 2;
   });
   $("#tiny-brush").mousedown(function(e){
     fabcanvas.freeDrawingBrush.width = 5;

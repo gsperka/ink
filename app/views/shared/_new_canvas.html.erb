@@ -48,7 +48,7 @@
 <script type="text/javascript">
 var totalDistance = 0;
 var lastSeenAt = {x: null, y: null};
-var click = false
+var click = false;
 
 $('#canvas-div').mousedown(function(event) {
   click = true;
@@ -66,8 +66,9 @@ $('#canvas-div').mousemove(function(event) {
   if(click) {
     if(lastSeenAt.x) {
       totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
-    }
-  }        
+    };
+  }      
+  if(totalDistance > Math.round(1000)) preventDrawing();
   $('span').text(1000 - Math.round(totalDistance));
       
   
