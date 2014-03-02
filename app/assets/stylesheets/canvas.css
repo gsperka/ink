@@ -1,5 +1,6 @@
 #canvas-partial-box {
   border: 1px solid #999999;
+  cursor:pointer;
   /*margin-left: auto;
   margin-right: auto;*/
 }

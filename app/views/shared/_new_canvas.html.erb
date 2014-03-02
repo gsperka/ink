@@ -3,12 +3,16 @@
 <% if logged_in? %>
   <% if params[:parent_id] == nil %>
     <button id="sketch-submit">Save this sketch</button>
+  <% else %>
+    <button id="sketch-submit">Save this sketch</button>
   <% end %>
 <% elsif logged_in_with_google? %>
     <button id="sketch-submit">Save this sketch</button>
 <% else %>
   <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
 <% end %>
+
+<p> You have <span>1000</span> pixels left<p>
 <div id="format-canvas-elements">
 <div id="drawing-tools">
   <div class="st-brush-border">
@@ -42,3 +46,36 @@
   <canvas width="600" height="600" id="canvas-partial-box"></canvas>
 </div>
 </div>
+
+<script type="text/javascript">
+var totalDistance = 0;
+var lastSeenAt = {x: null, y: null};
+var click = false;
+
+$('#canvas-div').mousedown(function(event) {
+  click = true;
+})
+
+$('#canvas-div').mouseup(function() {
+  click = false;
+})
+
+$('#canvas-div').mouseleave(function() {
+  click = false;
+})
+
+$('#canvas-div').mousemove(function(event) {
+  if(click) {
+    if(lastSeenAt.x) {
+      totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
+    };
+  }      
+  if(totalDistance > Math.round(1000)) preventDrawing();
+  $('span').text(1000 - Math.round(totalDistance));
+      
+  
+  lastSeenAt.x = event.clientX;
+  lastSeenAt.y = event.clientY;
+});
+ 
+</script>
