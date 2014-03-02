@@ -29,7 +29,7 @@
 <% end %>
 
 <%= javascript_tag do %>
-  window.allSketchesJSON = <%= raw @tree.all_sketches_json %>
+  window.sketches = <%= raw @sketches.to_json %>
 <% end %>
 
 

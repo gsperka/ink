@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("<%= Sketch.last.user.username %>");
+
   var treeID
   var rootJSON = {id:origin, children:[]};
   splitTree(rootJSON);
@@ -86,7 +86,6 @@ $(document).ready(function() {
         .attr("class", "node")
         .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
         .on("click", click);
-        console.log('js')
 
     nodeEnter.append("foreignObject")
       .attr("width", "155px")
@@ -109,7 +108,7 @@ $(document).ready(function() {
 
     nodeEnter.append("text")
         .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-        .attr("dy", ".35em")
+        .attr("dy", "-.5em")
         .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
         .text(function(d) { return d.id; })
         .style("fill-opacity", 1e-6);
@@ -118,7 +117,7 @@ $(document).ready(function() {
       .attr("xlink:href", function (d) { return '/trees/' + tID + "/sketches/" + d.id; })
       .append("rect")
       .attr("class", "clickable")
-      .attr("y", -6)
+      .attr("y", -15)
       .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
       .attr("width", 50) //2*4.5)
       .attr("height", 12)
@@ -187,6 +186,18 @@ $(document).ready(function() {
       d.x0 = d.x;
       d.y0 = d.y;
     });
+
+    //load canvas
+    console.log(sketches)
+    for(var i=0;i<sketches.length;i++) {
+      var jsonString = sketches[i].json_data;
+      var sketchId = "sketch-" + sketches[i].id;
+      console.log(sketchId)
+      sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      // $('.tree-view-sketches').css({'height': '75px', 'width': '75px', 'border': '1px solid black'})
+    }
+    
   }
 
   // Toggle children on click.
@@ -200,7 +211,4 @@ $(document).ready(function() {
     }
     update(d);
   }
-  $('body').on('click', function(event) {
-    loadCanvas();
-});
 })
