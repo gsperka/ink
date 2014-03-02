@@ -47,16 +47,31 @@
 <script type="text/javascript">
 var totalDistance = 0;
 var lastSeenAt = {x: null, y: null};
+var click = false
+
+$('#canvas-div').mousedown(function() {
+  click = true;
+})
+
+$('#canvas-div').mouseup(function() {
+  click = false;
+})
+
+$('#canvas-div').mouseleave(function() {
+  click = false;
+})
 
 $('#canvas-div').mousemove(function(event) {
-if(lastSeenAt.x) {
-        totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
-        
-    $('span').text('So far your mouse ran this many pixels:   ' + Math.round(totalDistance));
-    
+  if(click) {
+    if(lastSeenAt.x) {
+      totalDistance += Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2));
     }
-    lastSeenAt.x = event.clientX;
-    lastSeenAt.y = event.clientY;
+  }        
+  $('span').text('So far your mouse ran this many pixels:   ' + Math.round(totalDistance));
+      
+  
+  lastSeenAt.x = event.clientX;
+  lastSeenAt.y = event.clientY;
 });
  
 </script>
