@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @sketches = Sketch.where(user_id: session[:current_user_id])
+    @sketches = Sketch.where(user_id: session[:current_user_id]) || Sketch.where(user_id: session[:current_google_user_id])
   end
 
 end
