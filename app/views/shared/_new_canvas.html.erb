@@ -1,19 +1,9 @@
 
-<% if logged_in? %>
-  <% if params[:parent_id] == nil %>
-    <button id="sketch-submit">Save this sketch</button>
-  <% else %>
-    <button id="sketch-submit">Save this sketch</button>
-  <% end %>
-<% elsif logged_in_with_google? %>
-    <button id="sketch-submit">Save this sketch</button>
-<% else %>
-  <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
-<% end %>
+
 
 <p id='ink'> You have <span>10000</span> pixels left<p>
 
-<div id="format-canvas-elements">
+<div class="format-canvas-elements">
 <div id="drawing-tools">
   <div class="st-brush-border">
     <div id="super-tiny-brush"></div>
@@ -30,20 +20,33 @@
   <div class="large-brush-border">
     <div id="large-brush"></div>
   </div>
-  <div id="red"></div>
-  <div id="orange"></div>
-  <div id="yellow"></div>
-  <div id="green"></div>
-  <div id="blue"></div>
-  <div id="purple"></div>
-  <div id="brown"></div>
-  <div id="black"></div>
-  <div id="gray"></div>
-  <div id="white"></div>
+  <div class="color" id="red"></div>
+  <div class="color" id="orange"></div>
+  <div class="color" id="yellow"></div>
+  <div class="color" id="green"></div>
+  <div class="color" id="blue"></div>
+  <div class="color" id="purple"></div>
+  <div class="color" id="brown"></div>
+  <div class="color" id="black"></div>
+  <div class="color" id="gray"></div>
+  <div class="color" id="white"></div>
   <button id="clear-canvas">Clear</button>
 </div>
 <div id="canvas-div" style='position:relative'>
   <canvas width="600" height="600" id="canvas-partial-box"></canvas>
+</div>
+
+<% if logged_in? %>
+  <% if params[:parent_id] == nil %>
+    <button id="sketch-submit">Save this sketch</button>
+  <% else %>
+    <button id="sketch-submit">Save this sketch</button>
+  <% end %>
+<% elsif logged_in_with_google? %>
+    <button id="sketch-submit">Save this sketch</button>
+<% else %>
+  <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
+<% end %>
 </div>
 
 <script type="text/javascript">
@@ -69,17 +72,17 @@ function pixelCount() {
       if(lastSeenAt.x) {
         totalDistance += (Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2))) * fabcanvas.freeDrawingBrush.width;
       };
-    }      
-    if(Math.round(totalDistance) > 10000) {
-        
     }
-    
+    if(Math.round(totalDistance) > 10000) {
+
+    }
+
     $('span').text(10000 - Math.round(totalDistance));
-        
-    
+
+
     lastSeenAt.x = event.clientX;
     lastSeenAt.y = event.clientY;
   });
 }
- 
+
 </script>

@@ -6,7 +6,7 @@ class SketchesController < ApplicationController
 
   def create
     @tree = Tree.find(params[:tree_id])
-    google_sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json], googleuser_id: current_google_user.id)
+    google_sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json], uid: current_google_user.id)
     sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json], user_id: current_user.id)
     if Sketch.find(sketch.parent_id).lineage == nil #|| Sketch.find(google_sketch.parent_id).lineage == nil
       sketch.lineage = sketch.id.to_s
