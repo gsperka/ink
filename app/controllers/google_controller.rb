@@ -5,7 +5,16 @@ class GoogleController < ApplicationController
 
   def create
     @googleuser = Googleuser.from_omniauth(env["omniauth.auth"])
-    session[:current_google_user_id] = @googleuser.id
+    if User.find_by(id: @googleuser.user_id)
+      user = User.find_by(id: @googleuser.user_id)
+    else
+      user = User.new()
+      user.username = @googleuser.name
+      user.password = rand(36**12).to_s(36)
+      user.save(:validate => false)
+    end
+    @googleuser.update(user_id: user.id)
+    session[:current_user_id] = user.id
     redirect_to root_path
   end
 

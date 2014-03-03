@@ -1,11 +1,13 @@
 <div class="profile">
   <ul>
     <% if current_user != nil %>
-      <li> Hi, <%=User.find(session[:current_user_id]).username.capitalize%>. Welcome to your profile page!</li>
+      <li> Hi, <%=User.find(session[:current_user_id]).username%>. Welcome to your profile page!</li>
     <%elsif current_google_user != nil%>
-      <li> Hi, <%=Googleuser.find(session[:current_google_user_id]).name.capitalize%>. Welcome to your profile page!</li>
+      <li> Hi, <%=Googleuser.find(session[:current_google_user_id]).name%>. Welcome to your profile page!</li>
     <%end%>
   </ul>
+    <br>
+    <li> Below is a history of all your sketches </li>
 </nav>
 
 <div class ='past_user_sketches'>
