@@ -67,3 +67,5 @@ config/secrets.yml
 .rvmrc
 
 .env
+# Ignore application configuration
+/config/application.yml

@@ -42,6 +42,9 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 # Use unicorn as the app server
 # gem 'unicorn'
 
+# Use to hide keys
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
