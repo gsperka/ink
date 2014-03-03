@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+.past_user_sketches {
+  text-align: center;
+  margin: 0;
+}
+
+.past_user_sketches a {
+  width: auto;
+}
+
+.profile {
+  text-align: center;
+  font-size: 24px;
+}
