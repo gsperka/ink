@@ -1,6 +1,7 @@
 var Canvas = function(el) {
   this.el = el;
   this.parentSketch = $('#parent-sketch-data').val();
+  console.log(this.parentSketch);
   this.createCanvas(this.parentSketch);
   this.showTools();
   this.submitSketch();
