@@ -63,16 +63,24 @@ Canvas.prototype.submitSketch = function() {
   self = this;
   $(this.el).find('#sketch-submit').on("click", function(){
     var sketchInfo = JSON.stringify(self.fabcanvas);
-    if (typeof self.parentSketch === 'undefined') {
-      self.postNewTree(sketchInfo);
-    }
-    else {
-      if(self.parentSketch === sketchInfo) alert('Cannot submit without any contribution');
-      else {
-        self.postNewSketch(sketchInfo);
-      };
-    }
+    self.newTreeOldTree(sketchInfo);
   });
+}
+
+Canvas.prototype.newTreeOldTree = function(sketchInfo) {
+  if (typeof self.parentSketch === 'undefined') {
+    self.postNewTree(sketchInfo);
+  }
+  else {
+    self.calaborateCheck(sketchInfo);
+  }  
+}
+
+Canvas.prototype.calaborateCheck = function(sketchInfo) {  
+  if(self.parentSketch === sketchInfo) alert('Cannot submit without any contribution');
+  else {
+    self.postNewSketch(sketchInfo);
+  };
 }
 
 Canvas.prototype.postNewTree = function(sketchInfo) {
@@ -98,6 +106,8 @@ Canvas.prototype.postNewSketch = function(sketchInfo) {
   });
 }
 
+//   if(typeof(pixelCount) === 'function') pixelCount();
+
 $(document).ready(function(){
   var canvas = new Canvas('#format-canvas-elements');
 });
@@ -105,4 +115,3 @@ $(document).ready(function(){
 
 
 
-//   if(typeof(pixelCount) === 'function') pixelCount();
