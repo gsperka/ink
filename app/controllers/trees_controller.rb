@@ -16,16 +16,7 @@ class TreesController < ApplicationController
       tree.save
 
       respond_to do |format|
-      format.json { render :json => tree.id }
-       end
-    elsif current_google_user != nil
-      google_sketch =  Sketch.create(tree_id: tree.id, json_data: params[:sketch_json], user_id: current_google_user.id)
-      google_sketch.save
-      tree.origin_id = google_sketch.id
-      tree.save
-
-      respond_to do |format|
-      format.json { render :json => tree.id }
+        format.json { render :json => tree.id }
       end
     end
   end
