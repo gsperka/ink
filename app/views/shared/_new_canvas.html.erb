@@ -47,10 +47,24 @@
 </div>
 <div id="canvas-div" style='position:relative'>
   <canvas width="600" height="600" id="canvas-partial-box"></canvas>
+  <% if params[:parent_id] %>
   <form>
     <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
   </form>
+  <% end %>
 </div>
+    <% if logged_in? %>
+  <% if params[:parent_id] == nil %>
+
+    <button id="sketch-submit">Save this sketch</button>
+  <% else %>
+    <button id="sketch-submit">Save this sketch</button>
+  <% end %>
+<% elsif logged_in_with_google? %>
+    <button id="sketch-submit">Save this sketch</button>
+<% else %>
+  <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
+<% end %>
 </div>
 
 <script type="text/javascript">
