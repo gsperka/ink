@@ -3,9 +3,6 @@ $(document).ready(function() {
   var treeID
   var rootJSON = {id:origin, children:[]};
   splitTree(rootJSON);
-  rootJSON = JSON.stringify(rootJSON).replace(/,"children":[]/,'')
-  rootJSON = JSON.parse(rootJSON)
-  console.log(rootJSON)
 
   function splitTree(rootJSON) {
     for (var i=1; i<treeIDs.length; i++) {
