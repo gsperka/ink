@@ -1,6 +1,8 @@
 
-<% if logged_in? %>
+<div class='sketch-button'>
+    <% if logged_in? %>
   <% if params[:parent_id] == nil %>
+
     <button id="sketch-submit">Save this sketch</button>
   <% else %>
     <button id="sketch-submit">Save this sketch</button>
@@ -10,8 +12,9 @@
 <% else %>
   <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
 <% end %>
+</div>
 
-<p id='ink'> You have <span>10000</span> pixels left<p>
+<p id='ink'> You have used <span>0</span> pixels<p>
 
 <div id="format-canvas-elements">
 <div id="drawing-tools">
@@ -69,12 +72,14 @@ function pixelCount() {
       if(lastSeenAt.x) {
         totalDistance += (Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2))) * fabcanvas.freeDrawingBrush.width;
       };
+      
+  if(Math.round(totalDistance) > 10000) {
+    $('span').css('color', 'red');
+  }
     }      
-    if(Math.round(totalDistance) > 10000) {
-        
-    }
+
     
-    $('span').text(10000 - Math.round(totalDistance));
+    $('span').text(Math.round(totalDistance));
         
     
     lastSeenAt.x = event.clientX;
