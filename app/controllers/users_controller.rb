@@ -14,7 +14,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @sketches = Sketch.where(user_id: session[:current_user_id]) || Sketch.where(user_id: session[:current_google_user_id])
+    if current_user != nil
+      @sketches = Sketch.where(user_id: session[:current_user_id])
+    elsif
+      @sketches = Sketch.where(user_id: session[:current_google_user_id])
+    end
   end
 
 end
