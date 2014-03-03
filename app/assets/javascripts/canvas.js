@@ -90,6 +90,7 @@ $(document).ready(function(){
       };
     }
   });
+  if(typeof(pixelCount) === 'function') pixelCount();
 });
 
 
