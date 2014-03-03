@@ -70,8 +70,8 @@ function pixelCount() {
         totalDistance += (Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2))) * fabcanvas.freeDrawingBrush.width;
       };
     }      
-    if(totalDistance > Math.round(10000)) {
-
+    if(Math.round(totalDistance) > 10000) {
+        
     }
     
     $('span').text(10000 - Math.round(totalDistance));
