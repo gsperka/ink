@@ -1,6 +1,10 @@
 class Tree < ActiveRecord::Base
   has_many :sketches
 
+  def self.by_sketch_count(limit)
+    Tree.all.order("sketches_count DESC").order("created_at ASC").limit(limit)
+  end
+
   def self.by_vote
 
   end
