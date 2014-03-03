@@ -32,6 +32,9 @@
     </div>
     <div id="canvas-div" style='position:relative'>
       <canvas width="600" height="600" id="canvas-partial-box"></canvas>
+      <form>
+        <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
+      </form>
     </div>
 
     <% if logged_in? %>
