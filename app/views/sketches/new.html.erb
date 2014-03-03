@@ -3,8 +3,6 @@
     window.parent_id = <%= raw params[:parent_id].to_json %>
   <% end %>
 
-  <form>
-    <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
-  </form>
+
   <h2 style="text-align:center">Birth a child from this sketch by working your magic and clicking save.</h2>
   <%= render "/shared/new_canvas" %>
