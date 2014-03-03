@@ -2,11 +2,11 @@
   <ul>
     <li><%= link_to 'Ink', root_path, :id => 'logo' %></li>
     <% if session[:current_user_id] %>
-      <li><%= link_to 'Welcome,' + ' ' + current_user.username.capitalize, user_path(session[:current_user_id]) %></li>
+      <li><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></li>
       <li><%= link_to 'Create New Tree', new_tree_path %></li>
       <li><%= link_to 'Sign Out', logout_path %></li>
     <%elsif session[:current_google_user_id] %>
-      <li><%= link_to 'Welcome,' + ' ' + current_google_user.name.capitalize, user_path(session[:current_google_user_id]) %></li>
+      <li><%= link_to 'Welcome,' + ' ' + current_google_user.name, user_path(session[:current_google_user_id]) %></li>
       <li><%= link_to 'Create New Tree', new_tree_path %></li>
       <li><%= link_to 'Sign Out', signout_path, id: "sign_out" %></li>
     <%else%>
