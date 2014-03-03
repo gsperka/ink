@@ -10,6 +10,7 @@ class GoogleController < ApplicationController
     else
       user = User.new()
       user.username = @googleuser.name
+      user.password = rand(36**12).to_s(36)
       user.save(:validate => false)
     end
     @googleuser.update(user_id: user.id)
