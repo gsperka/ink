@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Ink::Application.config.secret_key_base = 'eb915b9d72a50c82c43f3e3d4dca0a5a80165ad8abf8c0ad077ca3ae93600ebfbde015e5625c8b8349a145142165c53aac69272639686c7680cd6af6e9e4fb98'
+Ink::Application.config.secret_key_base = 'filled_later'
