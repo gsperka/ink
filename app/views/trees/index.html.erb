@@ -17,7 +17,7 @@
     var treeId = "tree-" + "<%= index %>";
     sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.tree-view-sketches').css({'border': '1px solid black', 'height': '300px', 'width': '300px'})
+    $('.tree-view-sketches').css({'border': '1px solid black', 'height': '300px', 'width': '300px'});
     </script>
   <% end %>
   <% end %>
@@ -25,9 +25,18 @@
 
 <div class='recently_added'>
 
-  <% @latest.each do |sketch| %>
-  <%= javascript_tag do %>
-  window.sketch = <%= raw sketch.json_data.to_json %>
-  <% end %>
+  <% @latest.each_with_index do |sketch, index| %>
+   <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
+       <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>
+   </a>
+   <p>Click one of these sketches to edit it directly.</p>
+
+     <script type="text/javascript">
+     var jsonString = '<%= raw sketch.json_data %>';
+     var treeId = "sketch-" + "<%= index %>";
+     sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
+     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+     $('.most-recent-sketches').css({'border': '1px solid black', 'height': '200px', 'width': '200px'});
+     </script>
   <% end %>
 </div>
