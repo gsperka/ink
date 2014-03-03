@@ -1,6 +1,5 @@
 var Modal = function(el) {
   this.el = el
-
   $(this.el).find('#overlay').hide();
   $(this.el).find('#login_modal').hide();
   $(this.el).find('#login_modal').css({'margin-left': '-' + (($('#login_modal').width() / 2) + parseInt($("#login_modal").css('padding-left'))) + 'px'});
@@ -27,3 +26,7 @@ Modal.prototype.clickOff = function() {
     $(self).find('#login_modal').hide();
   })
 }
+
+$(document).ready(function() {
+  var modal = new Modal('body');
+});

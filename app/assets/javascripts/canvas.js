@@ -1,7 +1,6 @@
 var fabcanvas;
 $(document).ready(function(){
 
-
   var parentSketch = $("#parent-sketch-data").val();
 
   fabcanvas = new fabric.Canvas('canvas-partial-box', {isDrawingMode: true});
@@ -59,7 +58,7 @@ $(document).ready(function(){
 
 
 
-  $(document).on("click", "#sketch-submit", function(){
+  $('#sketch-submit').on("click", function(){
     var sketchInfo = JSON.stringify(fabcanvas);
     if (typeof parentSketch === 'undefined') {
       var tree = {sketch_json: sketchInfo};
