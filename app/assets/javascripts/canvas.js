@@ -63,6 +63,7 @@ Canvas.prototype.color = function(el, color) {
 Canvas.prototype.submitSketch = function() {
   self = this;
   $(this.el).find('#sketch-submit').on("click", function(){
+    console.log('hi')
     var sketchInfo = JSON.stringify(self.fabcanvas);
     self.newTreeOldTree(sketchInfo);
   });
@@ -110,7 +111,7 @@ Canvas.prototype.postNewSketch = function(sketchInfo) {
 //   if(typeof(pixelCount) === 'function') pixelCount();
 
 $(document).ready(function(){
-  var canvas = new Canvas('#format-canvas-elements');
+  var canvas = new Canvas('.format-canvas-elements');
 });
 
 
