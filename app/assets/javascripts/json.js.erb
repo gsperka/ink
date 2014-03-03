@@ -3,6 +3,9 @@ $(document).ready(function() {
   var treeID
   var rootJSON = {id:origin, children:[]};
   splitTree(rootJSON);
+  rootJSON = JSON.stringify(rootJSON).replace(/,"children":[]/,'')
+  rootJSON = JSON.parse(rootJSON)
+  console.log(rootJSON)
 
   function splitTree(rootJSON) {
     for (var i=1; i<treeIDs.length; i++) {
@@ -187,11 +190,9 @@ $(document).ready(function() {
     });
 
     //load canvas
-    console.log(sketches)
     for(var i=0;i<sketches.length;i++) {
       var jsonString = sketches[i].json_data;
       var sketchId = "sketch-" + sketches[i].id;
-      console.log(sketchId)
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
       $('.tree-view-sketches').css({'height': ' 100px', 'width': '100px', 'border': '1px solid black', 'position':'fixed'})

@@ -14,7 +14,7 @@
 <% end %>
 </div>
 
-<p id='ink'> You have <span>10000</span> pixels left<p>
+<p id='ink'> You have used <span>0</span> pixels<p>
 
 <div id="format-canvas-elements">
 <div id="drawing-tools">
@@ -74,14 +74,12 @@ function pixelCount() {
       };
       
   if(Math.round(totalDistance) > 10000) {
-    fabcanvas.isDrawingMode = false;
-    fabcanvas.forEachObject(function(object){object.selectable = false})
-    $('#ink').html('Out of ink')
+    $('span').css('color', 'red');
   }
     }      
 
     
-    $('span').text(10000 - Math.round(totalDistance));
+    $('span').text(Math.round(totalDistance));
         
     
     lastSeenAt.x = event.clientX;
