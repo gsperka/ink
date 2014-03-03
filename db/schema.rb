@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140302195458) do
     t.integer  "user_id"
     t.integer  "tree_id"
     t.text     "json_data"
-    t.text     "lineage"
     t.string   "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
