@@ -26,7 +26,7 @@ describe User do
 
   it "gives an error if password is too short" do
     user2 = User.create(first_name: "Jane", last_name: "Bloggs", username: "janebloggs", password: "pwd", password_confirmation: "pwd", email: "jbloggs@example.com")
-    expect(user2).to be_valid
+    expect(user2).to_not be_valid
   end
 
   it "gives an error if password and password confirmation do not match" do
@@ -36,6 +36,6 @@ describe User do
 
   it "has many sketches" do
     sketch = @user.sketches.create()
-    expect(@user.sketches).to eq(sketch)
+    expect(@user.sketches.first).to eq(sketch)
   end
 end
