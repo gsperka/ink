@@ -1,18 +1,20 @@
-<nav>
+<nav >
   <ul>
-    <li><%= link_to 'Ink', root_path, :id => 'logo' %></li>
+    <li class="nav-ink nav-block"><%= link_to 'Eversketch', root_path, :id => 'logo' %></li>
+    <!-- <li class="nav-green nav-block"></li>
+    <li class="nav-yellow nav-block"></li> -->
     <% if session[:current_user_id] %>
-      <li><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></li>
-      <li><%= link_to 'Create New Tree', new_tree_path %></li>
-      <li><%= link_to 'Sign Out', logout_path %></li>
+      <li class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username.capitalize, user_path(session[:current_user_id]) %></li>
+      <li class="nav-create nav-block"><%= link_to 'Create New Tree', new_tree_path %></li>
+      <li class="nav-signout nav-block"><%= link_to 'Sign Out', logout_path %></li>
     <%elsif session[:current_google_user_id] %>
-      <li><%= link_to 'Welcome,' + ' ' + current_google_user.name, user_path(session[:current_google_user_id]) %></li>
-      <li><%= link_to 'Create New Tree', new_tree_path %></li>
-      <li><%= link_to 'Sign Out', signout_path, id: "sign_out" %></li>
+      <li class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_google_user.name.capitalize, user_path(session[:current_google_user_id]) %></li>
+      <li class="nav-create nav-block"><%= link_to 'Create New Tree', new_tree_path %></li>
+      <li class="nav-signout nav-block"><%= link_to 'Sign Out', signout_path, id: "sign_out" %></li>
     <%else%>
-      <li><%= link_to 'Sign Up', new_user_path %></li>
-      <%= link_to image_tag("White-signin_Medium_base_32dp.png"), "/auth/google_oauth2", id: "sign_in" %>
-      <li><%= link_to 'Log In', login_path, :id => 'login' %></li>
+      <li class="nav-signout nav-block"><%= link_to 'Sign Up', new_user_path %></li>
+      <li class="nav-profile nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %><li>
+      <li class="nav-create nav-block"><%= link_to 'Log In', login_path, :id => 'login' %></li>
     <%end%>
   </ul>
 </nav>
