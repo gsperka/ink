@@ -41,7 +41,7 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 # gem 'unicorn'
 
 # For Heroku upload
-gem 'rails_12factor'
+gem 'rails_12factor', group: [:production]
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
