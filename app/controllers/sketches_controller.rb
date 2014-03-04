@@ -17,16 +17,15 @@ class SketchesController < ApplicationController
       session[:new_user_sketch_id] = sketch.id
     end
 
-    if Sketch.find(sketch.parent_id).lineage == nil # refactor into sketch parent relation call
+    if sketch.parent.lineage == nil
       sketch.lineage = sketch.id.to_s
     else
-      sketch.lineage = Sketch.find(sketch.parent_id).lineage.to_s + "," + sketch.id.to_s
+      sketch.lineage = sketch.parent.lineage.to_s + "," + sketch.id.to_s
     end
     sketch.save
     respond_to do |format|
       format.json { render :json => {path: correct_redirect } }
     end
-    # redirect_to tree_path(@tree.id)
   end
 
   def show
