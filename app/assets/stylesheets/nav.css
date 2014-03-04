@@ -74,20 +74,17 @@ h1 {
   .nav-block{
     margin: 0;
     display: inline-block;
-    width: 7%;
+    width: 20%;
     line-height: 3.688;
     height: 4.7em;
-    width: 16em;
     margin-left: 9px;
     text-align: center;
     vertical-align: middle;
-
-
   }
 
-  .nav-ink {
+  /*.nav-ink {
     margin-right: 20em;
-  }
+  }*/
 }
 
 @media only screen and (max-width : 1486px) {
@@ -96,16 +93,39 @@ h1 {
   }
 }
 
+@media screen and (max-width : 881){
+   .nav-block{
+    margin: 0;
+    display: inline-block;
+    width: 9%;
+    line-height: 3.688;
+    height: 4.7em;
+    margin-left: 9px;
+    text-align: center;
+    vertical-align: middle;
+  }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
-.nav-ink {
-  margin-right: -5em;
-  margin-left: -3em;
+  }
 }
-.nav-profile .nav-block{
-  display:none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

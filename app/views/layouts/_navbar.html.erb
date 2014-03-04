@@ -7,10 +7,6 @@
       <li class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username.capitalize, user_path(session[:current_user_id]) %></li>
       <li class="nav-create nav-block"><%= link_to 'Create New Tree', new_tree_path %></li>
       <li class="nav-signout nav-block"><%= link_to 'Sign Out', logout_path %></li>
-    <%elsif session[:current_google_user_id] %>
-      <li class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_google_user.name.capitalize, user_path(session[:current_google_user_id]) %></li>
-      <li class="nav-create nav-block"><%= link_to 'Create New Tree', new_tree_path %></li>
-      <li class="nav-signout nav-block"><%= link_to 'Sign Out', signout_path, id: "sign_out" %></li>
     <%else%>
       <li class="nav-signout nav-block"><%= link_to 'Sign Up', new_user_path %></li>
       <li class="nav-profile nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %><li>
