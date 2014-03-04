@@ -22,7 +22,7 @@ li a{
   text-align: center;
   color: #eee;
   text-decoration: none;
-  font-size:.938em;
+  font-size:1.25em;
 
   /*font-family: 'Roboto', sans-serif;*/
 }
@@ -39,12 +39,14 @@ h1 {
 }
 .nav-block{
   margin: 0;
-display: inline-block;
-width: 12em;
-vertical-align: middle;
-height: 4.7em;
-width: 17em;
-margin-left: 9px;
+  display: inline-block;
+  width: 12em;
+  line-height: 3.688;
+  height: 4.7em;
+  width: 17em;
+  margin-left: 9px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .nav-create{
@@ -61,14 +63,49 @@ margin-left: 9px;
  background-color: #E3E316;
 }
 .nav-green{
-background-color: #16E341;
+  background-color: #16E341;
 
 }
 .nav-ink {
-margin-right: 39em;
+  margin-right: 39em;
+}
+
+@media only screen and (max-width : 1854px) {
+  .nav-block{
+    margin: 0;
+    display: inline-block;
+    width: 7%;
+    line-height: 3.688;
+    height: 4.7em;
+    width: 16em;
+    margin-left: 9px;
+    text-align: center;
+    vertical-align: middle;
+
+
+  }
+
+  .nav-ink {
+    margin-right: 20em;
+  }
+}
+
+@media only screen and (max-width : 1486px) {
+  .nav-ink {
+    margin-right: 1em;
+  }
 }
 
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+.nav-ink {
+  margin-right: -5em;
+  margin-left: -3em;
+}
+.nav-profile .nav-block{
+  display:none;
+}
 
 
 
