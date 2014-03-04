@@ -1,6 +1,7 @@
 #canvas-partial-box {
   border: 3px solid #999999;
   cursor:pointer;
+  background-color: white;
   /*margin-left: auto;
   margin-right: auto;*/
 }
@@ -11,8 +12,10 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin
+}
 
+.tree-view-sketches, .most-recent-sketches, .parent, .sketch, .children {
+  background-color: white;
 }
 
 
