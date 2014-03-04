@@ -6,14 +6,26 @@ class SketchesController < ApplicationController
 
   def create
     @tree = Tree.find(params[:tree_id])
-    sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json], user_id: current_user.id)
-    if Sketch.find(sketch.parent_id).lineage == nil #|| Sketch.find(google_sketch.parent_id).lineage == nil
+    sketch = Sketch.create(tree_id: @tree.id, parent_id: params[:parent_id], json_data: params[:sketch_json])
+
+    if current_user
+      sketch.update(user_id: current_user.id)
+      correct_redirect = tree_path(@tree)
+    else
+      sketch.update(user_id: 1)
+      correct_redirect = login_path
+      session[:new_user_sketch_id] = sketch.id
+    end
+
+    if sketch.parent.lineage == nil
       sketch.lineage = sketch.id.to_s
     else
-      sketch.lineage = Sketch.find(sketch.parent_id).lineage.to_s + "," + sketch.id.to_s
+      sketch.lineage = sketch.parent.lineage.to_s + "," + sketch.id.to_s
     end
     sketch.save
-    redirect_to tree_path(@tree.id)
+    respond_to do |format|
+      format.json { render :json => {path: correct_redirect } }
+    end
   end
 
   def show

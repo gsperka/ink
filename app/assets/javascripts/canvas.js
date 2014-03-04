@@ -79,11 +79,11 @@ Canvas.prototype.newTreeOldTree = function(sketchInfo) {
     self.postNewTree(sketchInfo);
   }
   else {
-    self.calaborateCheck(sketchInfo);
-  }  
+    self.collaborateCheck(sketchInfo);
+  }
 }
 
-Canvas.prototype.calaborateCheck = function(sketchInfo) {  
+Canvas.prototype.collaborateCheck = function(sketchInfo) {
   if(self.parentSketch === sketchInfo) alert('Cannot submit without any contribution');
   else {
     self.postNewSketch(sketchInfo);
@@ -97,7 +97,7 @@ Canvas.prototype.postNewTree = function(sketchInfo) {
     data: {sketch_json: sketchInfo},
     dataType: 'json',
     success: function(response){
-      window.location.replace('/trees/' + response)
+      window.location.replace(response["path"]);
     }
   });
 }
@@ -108,7 +108,7 @@ Canvas.prototype.postNewSketch = function(sketchInfo) {
     url: "/trees/" + tree_id + "/sketches",
     data: {sketch_json: sketchInfo, parent_id: parent_id},
     success: function(response){
-      window.location.replace('/trees/' + tree_id)
+      window.location.replace(response["path"]);
     }
   });
 }
@@ -154,7 +154,7 @@ Canvas.prototype.addDistance = function() {
 Canvas.prototype.softWarning = function() {
   if(Math.round(self.totalDistance) > 10000) {
     $('span').css('color', 'red');
-  }  
+  }
 }
 
 $(document).ready(function(){

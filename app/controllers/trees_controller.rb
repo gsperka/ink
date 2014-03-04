@@ -9,14 +9,19 @@ class TreesController < ApplicationController
 
   def create
     tree = Tree.create()
-    if current_user != nil
+    if current_user
       sketch = Sketch.create(tree_id: tree.id, json_data: params[:sketch_json], user_id: current_user.id)
-      sketch.save
-      tree.origin_id = sketch.id
-      tree.save
+      tree.update(origin_id: sketch.id)
 
       respond_to do |format|
-        format.json { render :json => tree.id }
+        format.json { render :json => {path: tree_path(tree)} }
+      end
+    else
+      sketch = Sketch.create(tree_id: tree.id, json_data: params[:sketch_json], user_id: 1)
+      tree.update(origin_id: sketch.id)
+      session[:new_user_sketch_id] = sketch.id
+      respond_to do |format|
+        format.json { render :json => {path: login_path} }
       end
     end
   end
