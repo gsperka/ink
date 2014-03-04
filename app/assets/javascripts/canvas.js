@@ -1,10 +1,15 @@
 var Canvas = function(el) {
   this.el = el;
   this.parentSketch = $('#parent-sketch-data').val();
-  console.log(this.parentSketch);
+  this.totalDistance = 0;
+  this.lastSeenAt = {x: null, y: null};
+  this.click = false;
+
+
   this.createCanvas(this.parentSketch);
   this.showTools();
   this.submitSketch();
+  this.mouseAction();
 };
 
 Canvas.prototype.createCanvas = function(parentSketch) {
@@ -108,12 +113,53 @@ Canvas.prototype.postNewSketch = function(sketchInfo) {
   });
 }
 
-//   if(typeof(pixelCount) === 'function') pixelCount();
+Canvas.prototype.mouseAction = function() {
+  self = this;
+  $(this.el).find('#canvas-div').mousedown(function(event) {
+    self.click = true;
+  })
+
+  $(this.el).find('#canvas-div').mouseup(function() {
+    self.click = false;
+  })
+
+  $(this.el).find('#canvas-div').mouseleave(function() {
+    self.click = false;
+  })
+
+  this.mouseMove();
+}
+
+Canvas.prototype.mouseMove = function() {
+  self = this;
+  $(this.el).find('#canvas-div').mousemove(function(event) {
+    if(self.click) {
+      self.addDistance();
+      self.softWarning();
+    }
+
+    $('span').text(Math.round(self.totalDistance));
+
+    self.lastSeenAt.x = event.clientX;
+    self.lastSeenAt.y = event.clientY;
+  });
+}
+
+Canvas.prototype.addDistance = function() {
+  if(self.lastSeenAt.x) {
+    self.totalDistance += (Math.sqrt(Math.pow(self.lastSeenAt.y - event.clientY, 2) + Math.pow(self.lastSeenAt.x - event.clientX, 2))) * self.fabcanvas.freeDrawingBrush.width;
+  };
+}
+
+Canvas.prototype.softWarning = function() {
+  if(Math.round(self.totalDistance) > 10000) {
+    $('span').css('color', 'red');
+  }  
+}
 
 $(document).ready(function(){
   var canvas = new Canvas('.format-canvas-elements');
 });
-
 
 
 
