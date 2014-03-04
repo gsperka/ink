@@ -1,27 +1,3 @@
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<style>
-.node {
-  cursor: pointer;
-}
-
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
-.node text {
-  font: 10px sans-serif;
-}
-
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
-}
-
-</style>
-
 <%= javascript_tag do %>
   window.treeIDs = <%= raw @tree.all_sketches_lineage %>
   window.origin = <%= @origin.to_json %>
@@ -32,14 +8,5 @@
   window.sketches = <%= raw @sketches.to_json %>
 <% end %>
 
-
-
 <div id='tree-json'>
 </div>
-
-
-
-
-
-
-

@@ -99,31 +99,36 @@ $(document).ready(function() {
          })
       .attr("width", "600")
       .attr("height", "600")
-     .style({'border':'1px solid black'});
+      .style({'border':'1px solid black'});
 
     nodeEnter.append("circle")
         .attr("r", 1e-6)
         .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
-    nodeEnter.append("text")
-        .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
-        .attr("dy", "-.5em")
-        .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
-        .text(function(d) { return d.id; })
-        .style("fill-opacity", 1e-6);
-
     nodeEnter.append("a")
       .attr("xlink:href", function (d) { return '/trees/' + tID + "/sketches/" + d.id; })
-      .append("rect")
-      .attr("class", "clickable")
-      .attr("y", -15)
-      .attr("x", function (d) { return d.children || d._children ? -60 : 10; })
-      .attr("width", 50) //2*4.5)
-      .attr("height", 12)
-      .style("fill", "lightsteelblue")
+      .append("text")
+      .text("Family")
+      .attr("y", -20)
+      .attr("x", 0)
+      .attr("width", 40) //2*4.5)
+      .attr("height", 15)
+      .style("fill", "orange")
       .style("fill-opacity", .3)        // set to 1e-6 to make transparent
       ;
 
+    nodeEnter.append("a")
+      .attr("xlink:href", function (d) { return '/trees/' + tID + "/sketches/new?parent_id=" + d.id; })
+      .append("text")
+      .text("Edit")
+      .attr("class", "clickable")
+      .attr("y", -20)
+      .attr("x", 70)
+      .attr("width", 40) //2*4.5)
+      .attr("height", 15)
+      .style("fill", "blue")
+      .style("fill-opacity", .3)        // set to 1e-6 to make transparent
+      ;
 
 
     // Transition nodes to their new position.
@@ -194,9 +199,8 @@ $(document).ready(function() {
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
       $('.tree-view-sketches').css({'height': ' 100px', 'width': '100px', 'border': '1px solid black', 'position':'fixed'})
     }
-    
-  }
 
+  }
   // Toggle children on click.
   function click(d) {
     if (d.children) {
@@ -208,4 +212,15 @@ $(document).ready(function() {
     }
     update(d);
   }
+
+  for(var i=0;i<sketches.length;i++) {
+
+    $(document).on('mouseenter' ,'#sketch-' + sketches[i].id ,function(event) {
+      $(this).css({'height': ' 150px', 'width': '150px'});
+    })
+    $(document).on('mouseout', '#sketch-' + sketches[i].id, function(event) {
+      $(this).css({'height': '100px', 'width': '100px'});
+    })
+  }
+
 })
