@@ -23,10 +23,14 @@
 }
 
 #sketch-submit {
-  margin-top:20px;
+  margin-top:2px;
   width: 603px;
 }
 
 #ink {
   text-align: center;
+}
+
+#clear-canvas {
+  margin-left:10px;
 }
