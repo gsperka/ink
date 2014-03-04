@@ -1,13 +1,13 @@
-![Eversketch](http://www.eversketch.co "Eversketch")
+<strong>Eversketch</strong>
 
 <http://www.eversketch.co>
 
 Created by:
 
-- Gary Sperka [@GarySperka](https://twitter.com/GarySperka) - [GarySperka](www.linkedin.com/pub/gary-sperka/30/7b/553/) - <gsperka@gmail.com>
-- Lydia Koller [@lydiakoller1](https://twitter.com/lydiakoller1) - [LydiaKoller](www.linkedin.com/pub/lydia-koller/75/332/b33) - <lydiakoller1@gmail.com>
+- Gary Sperka [@GarySperka](https://twitter.com/GarySperka) - [LinkedIn](www.linkedin.com/pub/gary-sperka/30/7b/553/) - <gsperka@gmail.com>
+- Lydia Koller [@lydiakoller1](https://twitter.com/lydiakoller1) - [LinkedIn](www.linkedin.com/pub/lydia-koller/75/332/b33) - <lydiakoller1@gmail.com>
 - Jacky Sum [@Jsum528](https://twitter.com/Jsum528) - <jsum528@icloud.com>
-- Sam Blackman [@srossblack](https://twitter.com/srossblack) - [SamBlackman](www.linkedin.com/in/samuelblackman) - <sblackman@gmail.com>
+- Sam Blackman [@srossblack](https://twitter.com/srossblack) - [LinkedIn](www.linkedin.com/in/samuelblackman) - <sblackman@gmail.com>
 
 ##About
 
@@ -85,6 +85,9 @@ We are extremely pleased with the final product. Looking back, implementing d3 a
 but learned a lot during the process. Our team still has many ideas that we would eventually like to roll out. These ideas include:
 
 -Progressive animation of the image
+
 -Facebook / Twitter Oauth
+
 -Social media integration
+
 -Higher security measures (email verification, password reset)
