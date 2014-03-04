@@ -1,10 +1,10 @@
 <% if !logged_in? %>
 <h3 style="text-align:center;">Create an account and sign in to sketch and save your drawings</h3>
 <% end %>
-      
+
 
 <div id="index-container">
-<div id="separator-bar"></div>
+
 <div class='popular'>
   <h2>Most collaborated on</h2>
   <% @popular.each_with_index do |tree, index| %>
@@ -26,13 +26,13 @@
 </div>
 
 <div class='recently_added'>
-  <h2>Most recent sketch trees</h2>
+  <h2>Recent sketches</h2>
 
   <% @latest.each_with_index do |sketch, index| %>
    <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
        <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>
    </a>
-   <p>Click one of these sketches to edit it directly.</p>
+   <p>Click a sketch to add to it.</p>
 
      <script type="text/javascript">
      var jsonString = '<%= raw sketch.json_data %>';

@@ -1,12 +1,5 @@
-.st-brush-border, .tiny-brush-border, .small-brush-border, .medium-brush-border, .large-brush-border{
-   border: 1px solid black;
-   border-radius: 50%;
-}
 
-.tiny-brush-border{
-  height: 15px;
-  width: 15px;
-}
+
 #super-tiny-brush, #tiny-brush, #small-brush, #medium-brush, #large-brush{
   background-color: black;
   margin: 10px;

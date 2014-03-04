@@ -1,5 +1,11 @@
 body{
 	font-family: 'Roboto', sans-serif;
+  padding:0;
+  margin:0;
+  color:#333;
+}
+h1{
+  text-align: center;
 }
 
 #sign-up{
@@ -10,15 +16,18 @@ body{
 
 }
 
-input[type="submit"], #sketch-submit, #clear-canvas {
-border: none;
-background-color: #165EE3;
-color: #eee;
+input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
+  border: none;
+  background-color: #165EE3;
+  color: #eee;
+  margin-bottom:10px;
+  text-decoration: none;
+  padding:7px;
 }
 
 #clear-canvas{
   background-color: #E3163F;
-  margin-top:30px;
+  margin-top:50px;
 }
 
 #immediate-family{
@@ -27,4 +36,16 @@ color: #eee;
 
 .profile{
 	text-align: center;
+}
+
+#sign-up, #login{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+
+
+#login form{
 }

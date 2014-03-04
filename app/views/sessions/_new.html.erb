@@ -1,3 +1,4 @@
+<div id="login">
 <h1>Log In</h1>
 <% flash.each do |name, msg| %>
   <div class="error_explanation">
@@ -10,4 +11,5 @@
   <p><%= f.password_field :password, :placeholder => 'Password' %></p>
   <%= f.submit "Log in" %>
 <% end %>
-<%= link_to "New users can sign up here", new_user_path %>
+<%= link_to "New users can sign up here", new_user_path, :class => "log-in" %>
+</div>

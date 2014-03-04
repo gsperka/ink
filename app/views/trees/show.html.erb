@@ -1,3 +1,6 @@
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 <%= javascript_tag do %>
   window.treeIDs = <%= raw @tree.all_sketches_lineage %>
   window.origin = <%= @origin.to_json %>
@@ -7,6 +10,8 @@
 <%= javascript_tag do %>
   window.sketches = <%= raw @sketches.to_json %>
 <% end %>
+
+<h1>Explore sketch history</h1>
 
 <div id='tree-json'>
 </div>

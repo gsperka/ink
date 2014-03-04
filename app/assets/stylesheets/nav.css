@@ -1,11 +1,4 @@
-body{
-  font-family: 'Roboto', sans-serif;
-  padding:0;
-  margin:0;
-}
-
 nav{
-  margin:0;
   height: 4.688em;
   width:100%;
   background-color: #333;
@@ -14,9 +7,6 @@ nav{
 
 li {
   display: inline;
-  padding-right: 1.250em;
-
-
 }
 
 li a{
@@ -24,8 +14,8 @@ li a{
   color: #eee;
   text-decoration: none;
   font-size:1.25em;
-
-  /*font-family: 'Roboto', sans-serif;*/
+  line-height: 75px;
+  display:block;
 }
 
 nav ul {
@@ -38,14 +28,16 @@ h1 {
   border-bottom: .063em solid gray;
   padding-bottom: 10px;
 }
+
 .nav-block{
+  padding:0;
   margin: 0;
   display: inline-block;
   width: 12em;
   line-height: 3.688;
   height: 4.7em;
   width: 17em;
-  margin-left: 9px;
+  margin-left: 8px;
   text-align: center;
   vertical-align: middle;
 }
@@ -56,7 +48,6 @@ h1 {
 .nav-profile{
   background-color: #E36B16;
 }
-
 .nav-signout{
   background-color: #165EE3;
 }
@@ -65,13 +56,14 @@ h1 {
 }
 .nav-green{
   background-color: #16E341;
-
 }
 .nav-ink {
-  margin-right: 39em;
+  margin-right: 47.6em;
 }
 
-@media only screen and (max-width : 1854px) {
+
+
+@media only screen and (max-width : 1909px) {
   .nav-block{
     margin: 0;
     display: inline-block;
@@ -83,9 +75,8 @@ h1 {
     vertical-align: middle;
   }
 
-  /*.nav-ink {
-    margin-right: 20em;
-  }*/
+  #index-container{
+     width:100%;
 }
 
 @media only screen and (max-width : 1486px) {
@@ -105,6 +96,9 @@ h1 {
     text-align: center;
     vertical-align: middle;
   }
+
+  #index-container{
+     width:90%;
 }
 
 
