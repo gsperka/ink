@@ -2,25 +2,30 @@
 .parent_picture {
   text-align: center;
   width: 33%;
-  margin-top:25px;
   float:left;
+}
+
+.parent {
+  margin-top:110px;
 }
 
 .sketch_picture {
   text-align: center;
   width: 33%;
-  margin-top:25px;
   float:left;
 }
 
+.sketch {
+  margin-top:40px;
+}
+
 .children_picture_div {
-  margin-top:25px;
   width:33%;
   float:left;
 }
 
 .children_picture {
   text-align: center;
-  height:575px;
+  height:600px;
   overflow: auto;
 }
