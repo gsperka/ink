@@ -1,0 +1,15 @@
+.parent_picture {
+  width: 30%;
+  height:100%;
+  float: left;
+}
+.sketch_picture {
+  width: 30%;
+  height:100%;
+  float: left;
+}
+.children_picture {
+  width: 30%;
+  height:100%;
+  float: left;
+}
