@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_one :googleuser
 
   validates :password, :presence => true, :length => { :minimum => 6 }
-  validates :email, :uniqueness => true, :presence => true
+  validates :email, :uniqueness => true, :presence => true, :format => /.+@.+\..+/
   validates :username, :first_name, :last_name, :presence => true
   validates :username, :uniqueness => true
 end
