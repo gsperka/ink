@@ -1,4 +1,3 @@
-
 <p id='ink'> You have used <span>0</span> pixels<p>
 
   <div class="format-canvas-elements">
@@ -49,41 +48,3 @@
     <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
     <% end %>
   </div>
-
-  <script type="text/javascript">
-  function pixelCount() {
-    var totalDistance = 0;
-    var lastSeenAt = {x: null, y: null};
-    var click = false;
-
-    $('#canvas-div').mousedown(function(event) {
-      click = true;
-    })
-
-    $('#canvas-div').mouseup(function() {
-      click = false;
-    })
-
-    $('#canvas-div').mouseleave(function() {
-      click = false;
-    })
-
-    $('#canvas-div').mousemove(function(event) {
-      if(click) {
-        if(lastSeenAt.x) {
-          totalDistance += (Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2))) * fabcanvas.freeDrawingBrush.width;
-        };
-
-        if(Math.round(totalDistance) > 10000) {
-          $('span').css('color', 'red');
-        }
-      }
-
-      $('span').text(Math.round(totalDistance));
-
-      lastSeenAt.x = event.clientX;
-      lastSeenAt.y = event.clientY;
-    });
-  }
-
-  </script>
