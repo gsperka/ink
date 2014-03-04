@@ -31,11 +31,11 @@ or be able to add your vision to another user's sketch to see how it progresses 
   you will have to visit https://code.google.com/apis/console and set up your own Client ID, Client secret, and make
   sure to list your Redirect URI to: http://localhost:3000/auth/google_oauth2/callback
 
-      GOOGLE_KEY: Client ID from Google API console'
-      GOOGLE_SECRET: Client secret from Google API console'
-      SECRET_KEY_BASE: .config.secret_key_base from config/initializers/secret_token.rb'
+      GOOGLE_KEY: Client ID from Google API console
+      GOOGLE_SECRET: Client secret from Google API console
+      SECRET_KEY_BASE: .config.secret_key_base from config/initializers/secret_token.rb
 
-- Example:
+- Example
 
       Client Id = '1234567890' (provided from Google API)
 
@@ -43,7 +43,7 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
       export GOOGLE_KEY=1234567890
 
-- Type:
+- Type
 
       printenv
 
@@ -53,9 +53,9 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
       $ rake db:create && rake db:migrate && rake db:seed
 
-- Launch the application server:
+- Launch the application server
 
-    $ rails s
+      $ rails s
 
 - Open a browser and navigate to localhost:3000
 
