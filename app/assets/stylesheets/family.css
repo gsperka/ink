@@ -1,15 +1,26 @@
+
 .parent_picture {
-  width: 30%;
-  height:100%;
-  float: left;
+  text-align: center;
+  width: 33%;
+  margin-top:25px;
+  float:left;
 }
+
 .sketch_picture {
-  width: 30%;
-  height:100%;
-  float: left;
+  text-align: center;
+  width: 33%;
+  margin-top:25px;
+  float:left;
 }
+
+.children_picture_div {
+  margin-top:25px;
+  width:33%;
+  float:left;
+}
+
 .children_picture {
-  width: 30%;
-  height:100%;
-  float: left;
+  text-align: center;
+  height:575px;
+  overflow: auto;
 }
