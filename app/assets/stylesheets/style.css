@@ -1,5 +1,11 @@
 body{
 	font-family: 'Roboto', sans-serif;
+  padding:0;
+  margin:0;
+  color:#333;
+}
+h1{
+  text-align: center;
 }
 
 #sign-up{
@@ -11,9 +17,9 @@ body{
 }
 
 input[type="submit"], #sketch-submit, #clear-canvas {
-border: none;
-background-color: #165EE3;
-color: #eee;
+  border: none;
+  background-color: #165EE3;
+  color: #eee;
 }
 
 #clear-canvas{
