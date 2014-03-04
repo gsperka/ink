@@ -99,7 +99,7 @@ $(document).ready(function() {
          })
       .attr("width", "600")
       .attr("height", "600")
-     .style({'border':'1px solid black'});
+      .style({'border':'1px solid black'});
 
     nodeEnter.append("circle")
         .attr("r", 1e-6)
@@ -194,9 +194,8 @@ $(document).ready(function() {
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
       $('.tree-view-sketches').css({'height': ' 100px', 'width': '100px', 'border': '1px solid black', 'position':'fixed'})
     }
-    
-  }
 
+  }
   // Toggle children on click.
   function click(d) {
     if (d.children) {
@@ -208,4 +207,15 @@ $(document).ready(function() {
     }
     update(d);
   }
+
+  for(var i=0;i<sketches.length;i++) {
+
+    $(document).on('mouseenter' ,'#sketch-' + sketches[i].id ,function(event) {
+      $(this).css({'height': ' 150px', 'width': '150px'});
+    })
+    $(document).on('mouseout', '#sketch-' + sketches[i].id, function(event) {
+      $(this).css({'height': '100px', 'width': '100px'});
+    })
+  }
+
 })
