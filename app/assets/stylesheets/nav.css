@@ -39,6 +39,7 @@ h1 {
   padding-bottom: 10px;
 }
 .nav-block{
+  padding:0;
   margin: 0;
   display: inline-block;
   width: 12em;
@@ -68,7 +69,7 @@ h1 {
 
 }
 .nav-ink {
-  margin-right: 39em;
+  margin-right: 47.2em;
 }
 
 @media only screen and (max-width : 1854px) {
