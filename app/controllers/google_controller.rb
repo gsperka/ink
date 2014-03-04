@@ -4,21 +4,15 @@ class GoogleController < ApplicationController
   end
 
   def create
-    @googleuser = Googleuser.from_omniauth(env["omniauth.auth"])
-    if User.find_by(id: @googleuser.user_id)
-      user = User.find_by(id: @googleuser.user_id)
-    else
-      user = User.new()
-      user.username = @googleuser.name
-      user.password = rand(36**12).to_s(36)
-      user.save(:validate => false)
-    end
-    @googleuser.update(user_id: user.id)
+    @google_user = Googleuser.from_omniauth(env["omniauth.auth"])
+    user = @google_user.user || User.create_by_google_user(@google_user)
+
     session[:current_user_id] = user.id
     redirect_to root_path
   end
 
   def destroy
+    # not used anymore, right?
     session[:current_google_user_id] = nil
     redirect_to root_path
   end
