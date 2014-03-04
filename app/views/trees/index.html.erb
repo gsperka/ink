@@ -1,10 +1,12 @@
 <% if !logged_in? %>
 <h3 style="text-align:center;">Create an account and sign in to sketch and save your drawings</h3>
 <% end %>
+      
 
-<h2>Most recent sketch trees</h2>
-
+<div id="index-container">
+<div id="separator-bar"></div>
 <div class='popular'>
+  <h2>Most collaborated on</h2>
   <% @popular.each_with_index do |tree, index| %>
   <a href="<%= tree_path(tree.id) %>">
     <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
@@ -24,6 +26,7 @@
 </div>
 
 <div class='recently_added'>
+  <h2>Most recent sketch trees</h2>
 
   <% @latest.each_with_index do |sketch, index| %>
    <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
@@ -40,3 +43,4 @@
      </script>
   <% end %>
 </div>
+<div>

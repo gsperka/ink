@@ -1,0 +1,30 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+#sign-up{
+
+}
+
+#sign-form{
+
+}
+
+input[type="submit"], #sketch-submit, #clear-canvas {
+border: none;
+background-color: #165EE3;
+color: #eee;
+}
+
+#clear-canvas{
+  background-color: #E3163F;
+  margin-top:30px;
+}
+
+#immediate-family{
+	text-align:center;
+}
+
+.profile{
+	text-align: center;
+}

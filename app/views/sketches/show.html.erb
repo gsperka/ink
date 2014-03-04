@@ -1,3 +1,4 @@
+<div id="immediate-family">
 <div class='parent_picture'>
   <% if @sketch.parent != nil %>
   <h1>Parent</h1>
@@ -46,5 +47,5 @@
   <% end %>
   <p>Click any of these sketches to see their immediate family.</p>
 </div>
-
+</div>
 <%= link_to 'Go Back to Tree', tree_path(@tree.id) %>
