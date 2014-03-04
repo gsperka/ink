@@ -1,91 +1,55 @@
 
-<p id='ink'> You have used <span>0</span> pixels<p>
 
-  <div class="format-canvas-elements">
-    <div id="drawing-tools">
-      <div class="st-brush-border">
-        <div id="super-tiny-brush"></div>
-      </div>
-      <div class="tiny-brush-border">
-        <div id="tiny-brush"></div>
-      </div>
-      <div class="small-brush-border">
-        <div id="small-brush"></div>
-      </div>
-      <div class="medium-brush-border">
-        <div id="medium-brush"></div>
-      </div>
-      <div class="large-brush-border">
-        <div id="large-brush"></div>
-      </div>
-      <div class="color" id="red"></div>
-      <div class="color" id="orange"></div>
-      <div class="color" id="yellow"></div>
-      <div class="color" id="green"></div>
-      <div class="color" id="blue"></div>
-      <div class="color" id="purple"></div>
-      <div class="color" id="brown"></div>
-      <div class="color" id="black"></div>
-      <div class="color" id="gray"></div>
-      <div class="color" id="white"></div>
-      <button id="clear-canvas">Clear</button>
+<div class="format-canvas-elements">
+  <div id="drawing-tools">
+    <div class="st-brush-border">
+      <div id="super-tiny-brush"></div>
     </div>
-    <div id="canvas-div" style='position:relative'>
-      <canvas width="600" height="600" id="canvas-partial-box"></canvas>
-      <% if params[:parent_id] %>
-      <form>
-        <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
-      </form>
-      <% end %>
+    <div class="tiny-brush-border">
+      <div id="tiny-brush"></div>
     </div>
-
-    <% if logged_in? %>
-    <% if params[:parent_id] == nil %>
-    <button id="sketch-submit">Save this sketch</button>
-    <% else %>
-    <button id="sketch-submit">Save this sketch</button>
-    <% end %>
-    <% elsif logged_in_with_google? %>
-    <button id="sketch-submit">Save this sketch</button>
-    <% else %>
-    <h1 id="please-login" style="text-align:center;">Log in or sign up to save!</h1>
-    <% end %>
+    <div class="small-brush-border">
+      <div id="small-brush"></div>
+    </div>
+    <div class="medium-brush-border">
+      <div id="medium-brush"></div>
+    </div>
+    <div class="large-brush-border">
+      <div id="large-brush"></div>
+    </div>
+    <div class="color" id="red"></div>
+    <div class="color" id="orange"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="blue"></div>
+    <div class="color" id="purple"></div>
+    <div class="color" id="brown"></div>
+    <div class="color" id="black"></div>
+    <div class="color" id="gray"></div>
+    <div class="color" id="white"></div>
+    <button id="clear-canvas">Clear</button>
   </div>
 
-  <script type="text/javascript">
-  function pixelCount() {
-    var totalDistance = 0;
-    var lastSeenAt = {x: null, y: null};
-    var click = false;
-
-    $('#canvas-div').mousedown(function(event) {
-      click = true;
-    })
-
-    $('#canvas-div').mouseup(function() {
-      click = false;
-    })
-
-    $('#canvas-div').mouseleave(function() {
-      click = false;
-    })
-
-    $('#canvas-div').mousemove(function(event) {
-      if(click) {
-        if(lastSeenAt.x) {
-          totalDistance += (Math.sqrt(Math.pow(lastSeenAt.y - event.clientY, 2) + Math.pow(lastSeenAt.x - event.clientX, 2))) * fabcanvas.freeDrawingBrush.width;
-        };
-
-        if(Math.round(totalDistance) > 10000) {
-          $('span').css('color', 'red');
-        }
-      }
-
-      $('span').text(Math.round(totalDistance));
-
-      lastSeenAt.x = event.clientX;
-      lastSeenAt.y = event.clientY;
-    });
-  }
-
-  </script>
+  <div id="canvas-div" style='position:relative'>
+    <p id='ink'> You have used <span>0</span> pixels<p>
+    <canvas width="600" height="600" id="canvas-partial-box"></canvas>
+    <% if params[:parent_id] %>
+    <form>
+      <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
+    </form>
+    <% end %>
+  <div id='submit'>
+  <% if logged_in? %>
+    <% if params[:parent_id] == nil %>
+      <button id="sketch-submit">Save this sketch</button>
+    <% else %>
+      <button id="sketch-submit">Save this sketch</button>
+    <% end %>
+  <% elsif logged_in_with_google? %>
+    <button id="sketch-submit">Save this sketch</button>
+  <% else %>
+    <h3 id="please-login" style="text-align:center;">Log in or sign up to save!</h3>
+  <% end %>
+  </div>
+  </div>
+</div>

@@ -87,8 +87,7 @@
   background-color: #5F3D25;
 }
 
-
-
-
-
-
+#clear-canvas {
+  margin-left:10px;
+  width:80px;
+}
