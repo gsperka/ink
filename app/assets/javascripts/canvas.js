@@ -108,8 +108,7 @@ Canvas.prototype.postNewSketch = function(sketchInfo) {
     url: "/trees/" + tree_id + "/sketches",
     data: {sketch_json: sketchInfo, parent_id: parent_id},
     success: function(response){
-      console.log(response)
-      window.location.replace('/trees/' + tree_id);
+      window.location.replace(response["path"]);
     }
   });
 }
