@@ -51,11 +51,11 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
 - Run the rake commands to create, migrate and seed a postgres db:
 
-      $ rake db:create && rake db:migrate && rake db:seed
+                      $ rake db:create && rake db:migrate && rake db:seed
 
 - Launch the application server
 
-      $ rails s
+                      $ rails s
 
 - Open a browser and navigate to localhost:3000
 
