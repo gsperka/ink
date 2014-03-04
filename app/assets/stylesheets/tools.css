@@ -1,5 +1,5 @@
 .st-brush-border, .tiny-brush-border, .small-brush-border, .medium-brush-border, .large-brush-border{
-   border:1px, black;
+   border: 1px solid black;
    border-radius: 50%;
 }
 
