@@ -4,10 +4,10 @@
 
 Created by:
 
-- Gary Sperka [@GarySperka](https://twitter.com/GarySperka) - [LinkedIn](www.linkedin.com/pub/gary-sperka/30/7b/553/) - <gsperka@gmail.com>
-- Lydia Koller [@lydiakoller1](https://twitter.com/lydiakoller1) - [LinkedIn](www.linkedin.com/pub/lydia-koller/75/332/b33) - <lydiakoller1@gmail.com>
+- Gary Sperka [@GarySperka](https://twitter.com/GarySperka) - [LinkedIn](https://www.linkedin.com/pub/gary-sperka/30/7b/553/) - <gsperka@gmail.com>
+- Lydia Koller [@lydiakoller1](https://twitter.com/lydiakoller1) - [LinkedIn](https://www.linkedin.com/pub/lydia-koller/75/332/b33) - <lydiakoller1@gmail.com>
 - Jacky Sum [@Jsum528](https://twitter.com/Jsum528) - <jsum528@icloud.com>
-- Sam Blackman [@srossblack](https://twitter.com/srossblack) - [LinkedIn](www.linkedin.com/in/samuelblackman) - <sblackman@gmail.com>
+- Sam Blackman [@srossblack](https://twitter.com/srossblack) - [LinkedIn](https://www.linkedin.com/in/samuelblackman) - <sblackman@gmail.com>
 
 ##About
 
@@ -31,23 +31,23 @@ or be able to add your vision to another user's sketch to see how it progresses 
   you will have to visit https://code.google.com/apis/console and set up your own Client ID, Client secret, and make
   sure to list your Redirect URI to: http://localhost:3000/auth/google_oauth2/callback
 
-      GOOGLE_KEY: Client ID from Google API console
-      GOOGLE_SECRET: Client secret from Google API console
-      SECRET_KEY_BASE: .config.secret_key_base from config/initializers/secret_token.rb
+      GOOGLE_KEY: Client ID from Google API console'
+      GOOGLE_SECRET: Client secret from Google API console'
+      SECRET_KEY_BASE: .config.secret_key_base from config/initializers/secret_token.rb'
 
-      Example:
+- Example:
 
       Client Id = '1234567890' (provided from Google API)
 
-      type in the same terminal shell:
+- Type in the same terminal shell:
 
       export GOOGLE_KEY=1234567890
 
-      type:
+- Type:
 
       printenv
 
-      GOOGLE_KEY should be listed. If it is not, you are in the wrong terminal shell
+- GOOGLE_KEY should be listed. If it is not, you are in the wrong terminal shell
 
 - Run the rake commands to create, migrate and seed a postgres db:
 
