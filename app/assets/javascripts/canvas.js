@@ -53,9 +53,9 @@ Canvas.prototype.colorTools = function() {
   this.color('#blue', '#165EE3');
   this.color('#purple', '#7816E3');
   this.color('#brown', '#5F3D25');
-  this.color('#black', '#black');
+  this.color('#black', '#111111');
   this.color('#gray', '#838895');
-  this.color('#white', 'white');
+  this.color('#white', '#FFFFFF');
 };
 
 Canvas.prototype.color = function(el, color) {
