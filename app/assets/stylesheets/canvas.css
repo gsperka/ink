@@ -23,7 +23,10 @@
 }
 
 #sketch-submit {
-width: 604px;
-margin-left: 9px;
+  margin-top:20px;
+  width: 603px;
+}
 
-
+#ink {
+  text-align: center;
+}
