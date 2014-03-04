@@ -1,30 +1,30 @@
 #index-container {
-margin-left: 29px;
-height: 800px;
-width: 1850px;
+margin-left: 1.813em;
+height: 50em;
+width: 113.375em;
 }
 
 .popular {
 float: left;
-margin: 65px;
-margin-top: 10px;
-margin-left: 400px;
+margin: 4.063em;
+margin-top: .625em;
+margin-left: 25em;
 text-align: center;
 }
 
 .recently_added {
 float: right;
-margin: 75px;
-margin-top: 10px;
-margin-right: 400px;
+margin: 4.688em;
+margin-top: .625em;
+margin-right: 25em;
 text-align: center;
 }
 
 #separator-bar {
-height: 50px;
+height: 3.125em;
 width: 100%;
 background-color: #333;
-margin-top: 300px;
+margin-top: 18.750em;
 }
 
 #canvas-partial-box{

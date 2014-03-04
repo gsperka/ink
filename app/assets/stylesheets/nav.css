@@ -5,7 +5,6 @@ body{
 }
 
 nav{
-  /*margin:0;*/
   height: 4.688em;
   width:100%;
   background-color: #333;
@@ -55,7 +54,6 @@ h1 {
 .nav-profile{
   background-color: #E36B16;
 }
-
 .nav-signout{
   background-color: #165EE3;
 }
@@ -64,7 +62,6 @@ h1 {
 }
 .nav-green{
   background-color: #16E341;
-
 }
 .nav-ink {
   margin-right: 47.6em;
@@ -72,7 +69,7 @@ h1 {
 
 
 
-@media only screen and (max-width : 1854px) {
+@media only screen and (max-width : 1909px) {
   .nav-block{
     margin: 0;
     display: inline-block;
@@ -84,9 +81,8 @@ h1 {
     vertical-align: middle;
   }
 
-  /*.nav-ink {
-    margin-right: 20em;
-  }*/
+  #index-container{
+     margin-right: 1em;
 }
 
 @media only screen and (max-width : 1486px) {
