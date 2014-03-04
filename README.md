@@ -21,11 +21,11 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
 - Fork the repo and clone the files onto your local machine:
 
-      $ git clone https://github.com/jsum528/ink.git
+                      $ git clone https://github.com/jsum528/ink.git
 
 - Navigate to the application directory in terminal and run **bundle install** to gather the required gems:
 
-      $ bundle install
+                      $ bundle install
 
 - After bundle, you will need to set the environment variables in your terminal. To get the correct values,
   you will have to visit https://code.google.com/apis/console and set up your own Client ID, Client secret, and make
@@ -37,17 +37,17 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
 - Example
 
-      Client Id = '1234567890' (provided from Google API)
+                      Client Id = '1234567890' (provided from Google API)
 
 - Type in the same terminal shell:
 
-      export GOOGLE_KEY=1234567890
+                      export GOOGLE_KEY=1234567890
 
 - Type
 
-      printenv
+                      printenv
 
-- GOOGLE_KEY should be listed. If it is not, you are in the wrong terminal shell
+   GOOGLE_KEY should be listed. If it is not, you are in the wrong terminal shell
 
 - Run the rake commands to create, migrate and seed a postgres db:
 
