@@ -22,12 +22,12 @@ input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
   color: #eee;
   margin-bottom:10px;
   text-decoration: none;
-  padding:2px;
+  padding:7px;
 }
 
 #clear-canvas{
   background-color: #E3163F;
-  margin-top:30px;
+  margin-top:50px;
 }
 
 #immediate-family{

@@ -12,8 +12,9 @@
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
     $('.parent').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
   </script>
+  <p>Click sketch to see its immediate family.</p>
   <% end %>
-  <p>Click this sketch to see its immediate family.</p>
+
 </div>
 
 <div class='sketch_picture'>
@@ -28,7 +29,7 @@
     sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
     $('.sketch').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
   </script>
-  <p>Click this sketch to give birth to its child.</p>
+  <p>Click this sketch to collaborate on it.</p>
 </div>
 
 <div class='children_picture'>
@@ -45,7 +46,7 @@
       $('.children').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
     </script>
   <% end %>
-  <p>Click any of these sketches to see their immediate family.</p>
+  <p>Click sketch to see its immediate family.</p>
 </div>
 </div>
 <%= link_to 'Go Back to Tree', tree_path(@tree.id) %>
