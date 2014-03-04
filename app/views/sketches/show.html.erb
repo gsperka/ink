@@ -1,52 +1,52 @@
-<div id="immediate-family">
-<div class='parent_picture'>
-  <% if @sketch.parent != nil %>
-  <h1>Parent</h1>
-  <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
-    <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
-  </a>
-  <script type="text/javascript">
-    var jsonString = '<%= raw @sketch.parent.json_data %>';
-    var sketchId = "sketch_parent";
-    sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
-    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.parent').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
-  </script>
-  <p>Click sketch to see its immediate family.</p>
-  <% end %>
-
-</div>
-
-<div class='sketch_picture'>
-  <h1>Sketch</h1>
-  <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
-    <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
-  </a>
-  <script type="text/javascript">
-    var jsonString = '<%= raw @sketch.json_data %>';
-    var sketchId = "sketch";
-    sketchCanvas = new fabric.StaticCanvas(sketchId);
-    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.sketch').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
-  </script>
-  <p>Click this sketch to collaborate on it.</p>
-</div>
-
-<div class='children_picture'>
-  <h1>Children</h1>
-  <% @sketch.children.each_with_index do |children, index| %>
-    <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
-      <canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas>
+<%= link_to 'Go Back to Tree', tree_path(@tree.id) %>
+<div class='static_picture'>
+  <div class='parent_picture'>
+    <h1>Root</h1>
+    <% if @sketch.parent != nil %>
+    <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
+      <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
     </a>
     <script type="text/javascript">
-      var jsonString = '<%= raw children.json_data %>';
-      var sketchId = "sketch-" + "<%= index %>";
+      var jsonString = '<%= raw @sketch.parent.json_data %>';
+      var sketchId = "sketch_parent";
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-      $('.children').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
+      $('.parent').css({'height': '300px', 'width': '300px', 'border': '1px solid black'})
     </script>
-  <% end %>
-  <p>Click sketch to see its immediate family.</p>
+    <% end %>
+
+  </div>
+
+  <div class='sketch_picture'>
+    <h1>Sketch</h1>
+    <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
+      <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
+    </a>
+    <script type="text/javascript">
+      var jsonString = '<%= raw @sketch.json_data %>';
+      var sketchId = "sketch";
+      sketchCanvas = new fabric.StaticCanvas(sketchId);
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.sketch').css({'height': '450px', 'width': '450px', 'border': '1px solid black'})
+    </script>
+    <p>Click this sketch to collaborate on it.</p>
+  </div>
 </div>
+
+  <div class='children_picture_div'>
+    <h1>Branch</h1>
+    <div class='children_picture'>
+    <% @sketch.children.each_with_index do |children, index| %>
+      <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
+        <p><canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas></p>
+      </a>
+      <script type="text/javascript">
+        var jsonString = '<%= raw children.json_data %>';
+        var sketchId = "sketch-" + "<%= index %>";
+        sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+        sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+        $('.children').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
+      </script>
+    <% end %>
+  </div>
 </div>
-<%= link_to 'Go Back to Tree', tree_path(@tree.id) %>

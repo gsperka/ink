@@ -1,0 +1,31 @@
+
+.parent_picture {
+  text-align: center;
+  width: 33%;
+  float:left;
+}
+
+.parent {
+  margin-top:110px;
+}
+
+.sketch_picture {
+  text-align: center;
+  width: 33%;
+  float:left;
+}
+
+.sketch {
+  margin-top:40px;
+}
+
+.children_picture_div {
+  width:33%;
+  float:left;
+}
+
+.children_picture {
+  text-align: center;
+  height:600px;
+  overflow: auto;
+}
