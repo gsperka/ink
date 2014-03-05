@@ -1,36 +1,49 @@
+
 <% sketch = Sketch.find(rand(Sketch.count)) %>
-<%= link_to 'Random Sketch', tree_sketch_path(sketch.tree_id, sketch.id) %>
+
+<h1></h1>
+
+<div class="button-container">
+  <form action='<%= new_tree_path %>'>
+  <button class="collab-button">Start Fresh</button>
+</form>
+  <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
+    <button class="random-button">Random</button>
+  </form>
+
+</div>
 
 <div id="index-container">
 
-<div class='popular'>
-  <h2>Most collaborated on</h2>
-  <% @popular.each_with_index do |tree, index| %>
-  <a href="<%= tree_path(tree.id) %>">
-    <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
-  </a>
-  <p>Click any sketch to see everything in its ancestory.</p>
+  <div class="two-column">
+    <div class='popular'>
+      <h2>Popular</h2>
+      <% @popular.each_with_index do |tree, index| %>
+      <a href="<%= tree_path(tree.id) %>">
+        <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
+      </a>
+      <p>Click any sketch to see everything in its ancestory.</p>
 
-  <% if tree.sketches.last != nil %>
-    <script type="text/javascript">
-    var jsonString = '<%= raw tree.sketches.last.json_data %>';
-    var treeId = "tree-" + "<%= index %>";
-    sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
-    sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-    $('.tree-view-sketches').css({'border': '1px solid black', 'height': '300px', 'width': '300px'});
-    </script>
-  <% end %>
-  <% end %>
-</div>
+      <% if tree.sketches.last != nil %>
+      <script type="text/javascript">
+      var jsonString = '<%= raw tree.sketches.last.json_data %>';
+      var treeId = "tree-" + "<%= index %>";
+      sketchCanvas = new fabric.StaticCanvas(treeId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.tree-view-sketches').css({'border': '1px solid black', 'height': '300px', 'width': '300px'});
+      </script>
+      <% end %>
+      <% end %>
+    </div>
 
-<div class='recently_added'>
-  <h2>Recent sketches</h2>
+    <div class='recently_added'>
+      <h2>Recent</h2>
 
-  <% @latest.each_with_index do |sketch, index| %>
-   <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
+      <% @latest.each_with_index do |sketch, index| %>
+      <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
        <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>
-   </a>
-   <p>Click a sketch to add to it.</p>
+     </a>
+     <p>Click a sketch to add to it.</p>
 
      <script type="text/javascript">
      var jsonString = '<%= raw sketch.json_data %>';
@@ -39,6 +52,8 @@
      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
      $('.most-recent-sketches').css({'border': '1px solid black', 'height': '200px', 'width': '200px'});
      </script>
-  <% end %>
+     <% end %>
+   </div>
+ </div>
 </div>
-<div>
+
