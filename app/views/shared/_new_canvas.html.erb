@@ -56,13 +56,12 @@
     <button class="color active-color" id="black"></button>
     <button class="color" id="gray"></button>
     <button class="color" id="white"></button>
+    <p id='ink'><span>0</span> pixels</p>
     <button id="clear-canvas">Clear</button>
   </div>
 
   <div id="canvas-div" style='position:relative'>
-    <p id='ink'> You have used <span>0</span> pixels</p>
-
-
+  
     <div class='canvas-border'>
     <canvas width="600" height="600" id="canvas-partial-box"></canvas>
     <% if params[:parent_id] %>
