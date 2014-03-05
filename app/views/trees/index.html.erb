@@ -1,15 +1,17 @@
 
-<% sketch = Sketch.find(rand(Sketch.count)) %>
+<% sketch = Sketch.random %>
 
 <h1></h1>
 
 <div class="button-container">
   <form action='<%= new_tree_path %>'>
   <button class="collab-button">Start Fresh</button>
-</form>
-  <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
-    <button class="random-button">Random</button>
+<% if sketch %>
   </form>
+    <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
+      <button class="random-button">Random</button>
+    </form>
+<% end %>
 
 </div>
 
@@ -18,7 +20,7 @@
   <div class="two-column">
     <div class='popular'>
       <h2>Popular</h2>
-      <% @popular.each_with_index do |tree, index| %>
+      <% @popular_trees.each_with_index do |tree, index| %>
       <a href="<%= tree_path(tree.id) %>">
         <canvas width="600" height="600" class="tree-view-sketches" id="tree-<%= index %>"></canvas>
       </a>
@@ -39,7 +41,7 @@
     <div class='recently_added'>
       <h2>Recent</h2>
 
-      <% @latest.each_with_index do |sketch, index| %>
+      <% @latest_sketches.each_with_index do |sketch, index| %>
       <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
        <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>
      </a>
