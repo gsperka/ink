@@ -13,6 +13,7 @@
 }
 
 .canvas-border {
+  margin-top:18px;
   border: 2px black solid;
 }
 
@@ -28,7 +29,6 @@ canvas {
   background-color: white;
 }
 
-
 .canvas-container {
   /*margin-left: auto;
   margin-right: auto;*/
@@ -41,7 +41,6 @@ canvas {
 }
 
 .format-canvas-elements{
-
   width: 780px;
   margin-left: auto;
   margin-right: auto;
@@ -53,11 +52,8 @@ canvas {
 }
 
 #ink {
-  text-align: center;
-}
-
-#clear-canvas {
   margin-left:10px;
+  text-align: left;
 }
 
 .arrow {
