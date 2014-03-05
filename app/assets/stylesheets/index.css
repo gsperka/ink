@@ -1,7 +1,7 @@
 #index-container {
 margin-left: auto;
 margin-right: auto;
-height: 50em;
+height: 100%;
 width: 100em;
 border-top: 3.125em solid #333;
 }
@@ -21,12 +21,7 @@ margin-top: .625em;
 text-align: center;
 }
 
-/*#separator-bar {
-height: 3.125em;
-width: 100%;
-background-color: #333;
-margin-top: 18.750em;
-}*/
+
 .button-container {
 height: 15em;
 width: 62em;
@@ -58,7 +53,7 @@ background-color: #7321d1;
 
 
 .two-column {
-height: 15em;
+height: 100%;
 width: 74em;
 margin-left: auto;
 margin-right: auto;
