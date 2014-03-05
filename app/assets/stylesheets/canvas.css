@@ -1,9 +1,12 @@
 #canvas-partial-box {
-  border: 3px solid #999999;
   cursor:pointer;
   background-color: white;
   /*margin-left: auto;
   margin-right: auto;*/
+}
+
+.canvas-border {
+  border: 2px black solid;
 }
 
 canvas {
