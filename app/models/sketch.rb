@@ -5,7 +5,7 @@ class Sketch < ActiveRecord::Base
   has_many :children, class_name: 'Sketch', foreign_key: 'parent_id'
 
   def self.random
-    self.find_by(id: rand(1..Sketch.count))
+    self.all.sample
   end
 
   def self.latest(num)
