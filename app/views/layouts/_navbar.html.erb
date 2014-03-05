@@ -4,8 +4,7 @@
 <nav >
   <ul>
     <li class="nav-ink nav-block"><%= link_to 'Eversketch', root_path, :id => 'logo' %></li>
-    <!-- <li class="nav-green nav-block"></li>
-    <li class="nav-yellow nav-block"></li> -->
+
     <% if session[:current_user_id] %>
     <div class="nav-buttons">
       <button class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></button>
