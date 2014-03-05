@@ -31,13 +31,17 @@
   </div>
 
   <div id="canvas-div" style='position:relative'>
-    <p id='ink'> You have used <span>0</span> pixels<p>
+    <p id='ink'> You have used <span>0</span> pixels</p>
+
+
+    <div class='canvas-border'>
     <canvas width="600" height="600" id="canvas-partial-box"></canvas>
     <% if params[:parent_id] %>
     <form>
       <input type="hidden" id="parent-sketch-data" name="parent-sketch-data" value='<%= Sketch.find(params[:parent_id]).json_data %>'>
     </form>
     <% end %>
+      </div>
   <div id='submit'>
       <button id="sketch-submit">Save this sketch</button>
   </div>
