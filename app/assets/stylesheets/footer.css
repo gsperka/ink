@@ -1,12 +1,12 @@
 #footer{
-  margin-top: -3em;
-  position:relative;
-  height: 4.688em;
+ /* margin-top: -3em;*/
+  position:fixed;
+  /*height: 4.688em;*/
   width:100%;
-  background-color: #333;
-
+  color: #333;
+  text-align: center;
+  /*margin: 0;*/
 }
-
 
 /*#footer {
     clear: both;
