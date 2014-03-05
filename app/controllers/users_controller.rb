@@ -20,8 +20,6 @@ class UsersController < ApplicationController
   def show
     if current_user != nil
       @sketches = Sketch.where(user_id: session[:current_user_id])
-    elsif
-      @sketches = Sketch.where(user_id: session[:current_google_user_id])
     end
   end
 
