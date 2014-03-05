@@ -1,6 +1,6 @@
 #footer{
  /* margin-top: -3em;*/
-  position:fixed;
+  position:relative;
   /*height: 4.688em;*/
   width:100%;
   color: #333;
