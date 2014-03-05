@@ -2,7 +2,7 @@
   width:160px;
   float:left;
   margin-left: 10px;
-
+  text-align: center;
 }
 
 #canvas-partial-box {
@@ -58,4 +58,9 @@ canvas {
 
 #clear-canvas {
   margin-left:10px;
+}
+
+.arrow {
+  text-align: center;
+  font-size:25px;
 }
