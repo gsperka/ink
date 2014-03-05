@@ -11,19 +11,19 @@
   <% else %>
     <% lineage = [parent] %>
   <% end %>
-  <% lineage.each_with_index do |lineage, index| %>
-    <a href="<%= tree_sketch_path(lineage.tree_id, lineage.id) %>">
-      <p><canvas width="600" height="600" class="lineage" id="sketch-<%= index %>"></canvas></p>
+  <% lineage.each_with_index do |lineage_pic, index| %>
+    <a href="<%= tree_sketch_path(lineage_pic.tree_id, lineage_pic.id) %>">
+      <p><canvas width="600" height="600" class="lineage_pic" id="sketch-<%= index %>"></canvas></p>
     </a>
 
     <script type="text/javascript">
-      var jsonString = '<%= raw lineage.json_data %>';
+      var jsonString = '<%= raw lineage_pic.json_data %>';
       var sketchId = "sketch-" + "<%= index %>";
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-      $('.lineage').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
+      $('.lineage_pic').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
     </script>
-    <% if index != 2 %><p class='arrow'>&#9660;</p><% end %>
+    <% if lineage_pic != lineage.last %><p class='arrow'>&#9660;</p><% end %>
   <% end %>
 </div>
 <% end %>
