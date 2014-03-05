@@ -7,7 +7,7 @@ border-top: 3.125em solid #333;
 }
 
 .popular {
-float: left;
+/*float: left;*/
 width:900px;
 display:inline-block;
 margin-top: .625em;
