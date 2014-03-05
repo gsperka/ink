@@ -51,7 +51,9 @@ input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
   text-align: center;
 }
 
-
-
 #login form{
+}
+
+:focus {
+  outline: 0;
 }

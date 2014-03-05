@@ -36,10 +36,6 @@ button:active{
   box-shadow: inset 0 0 10px #333;
 }
 
-.nav-buttons button:focus{
-  outline:0;
-}
-
 .collab-button, .random-button {
 background-color: #333;
 font-size: 18px;
@@ -51,12 +47,22 @@ padding-right: 10em;
 padding-left: 10em;
 margin-top: 4em;
 float: right;
+box-shadow: 3px 3px 3px #AAA;
+-moz-box-shadow: 3px 3px 3px #AAA;
+-webkit-box-shadow: 3px 3px 3px #AAA;
+}
+
+.collab-button:hover, .random-button:hover {
+  box-shadow: 6px 6px 6px #AAA;
+  -moz-box-shadow: 6px 6px 6px #AAA;
+  -webkit-box-shadow: 6px 6px 6px #AAA;
 }
 
 .random-button {
 float:right;
 background-color: #7321d1;
 }
+
 .collab-button{
   float:left;
   background-color: #1bc43d;
