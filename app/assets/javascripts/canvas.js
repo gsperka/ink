@@ -49,7 +49,7 @@ Canvas.prototype.colorTools = function() {
   this.color('#red', '#E31623');
   this.color('#orange', '#E36B16');
   this.color('#yellow', '#E3E316');
-  this.color('#green', '#16E341');
+  this.color('#green', '#1bc43d');
   this.color('#blue', '#165EE3');
   this.color('#purple', '#7816E3');
   this.color('#brown', '#5F3D25');
