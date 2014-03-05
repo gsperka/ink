@@ -1,7 +1,7 @@
 <%= link_to 'Go Back to Tree', tree_path(@tree.id) %>
 <div class='static_picture'>
   <div class='parent_picture'>
-    <h1>Root</h1>
+    <h1>Parent</h1>
     <% if @sketch.parent != nil %>
     <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
       <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
@@ -34,19 +34,33 @@
 </div>
 
   <div class='children_picture_div'>
-    <h1>Branch</h1>
-    <div class='children_picture'>
-    <% @sketch.children.each_with_index do |children, index| %>
-      <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
-        <p><canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas></p>
-      </a>
-      <script type="text/javascript">
-        var jsonString = '<%= raw children.json_data %>';
-        var sketchId = "sketch-" + "<%= index %>";
-        sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
-        sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-        $('.children').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
-      </script>
-    <% end %>
-  </div>
+    <h1>Children</h1>
+
+      <div class='children_picture'>
+      <% @sketch.children.each_with_index do |children, index| %>
+        <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
+          <p><canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas></p>
+        </a>
+
+
+
+
+        <script type="text/javascript">
+          var jsonString = '<%= raw children.json_data %>';
+          var sketchId = "sketch-" + "<%= index %>";
+          sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+          sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+          $('.children').css({'height': '200px', 'width': '200px', 'border': '1px solid black'})
+        </script>
+      <% end %>
+
+        <a class='plus_a' href="<%= new_tree_sketch_path(parent_id: @sketch.id) %>">
+          <div class='plus_box'>
+            +
+          </div>
+        </a>  
+      </div>
+
+
+    </div>
 </div>

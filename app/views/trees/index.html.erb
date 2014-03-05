@@ -1,6 +1,5 @@
-
-
-
+<% sketch = Sketch.find(rand(Sketch.count)) %>
+<%= link_to 'Random Sketch', tree_sketch_path(sketch.tree_id, sketch.id) %>
 
 <div id="index-container">
 
