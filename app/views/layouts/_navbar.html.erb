@@ -1,19 +1,23 @@
+
+
+
 <nav >
   <ul>
-    <li class="nav-ink nav-block"><%= link_to 'Eversketch', root_path, :id => 'logo' %></li>
+    <button class="nav-ink nav-block"><%= link_to 'Eversketch', root_path, :id => 'logo' %></button>
     <!-- <li class="nav-green nav-block"></li>
     <li class="nav-yellow nav-block"></li> -->
     <% if session[:current_user_id] %>
-      <li class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></li></a>
-      <li class="nav-create nav-block"><%= link_to 'Create New Sketch', new_tree_path %></li>
+    <div class="nav-buttons">
+      <button> class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></button>
+      <button> class="nav-create nav-block"><%= link_to 'Create New Sketch', new_tree_path %></button>
       <li class="nav-signout nav-block"><%= link_to 'Sign Out', logout_path %></li>
     <%else%>
-      <li class="nav-signout nav-block"><%= link_to 'Sign Up', new_user_path %></li>
-      <li class="nav-profile nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %><li>
-      <li class="nav-create nav-block"><%= link_to 'Log In', login_path, :id => 'login' %></li>
+      <button class="nav-signout nav-block"><%= link_to 'Sign Up', new_user_path %></button>
+      <button class="nav-profile nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
+      <button class="nav-create nav-block"><%= link_to 'Log In', login_path, :id => 'login' %></button>
     <%end%>
+  </div>
   </ul>
 </nav>
-
 
 

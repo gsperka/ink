@@ -42,7 +42,7 @@
 
     <div class='recently-added'>
       <h2>Recent</h2>
-      <h3>Add to a sketch below!</h3>
+      <h3>Add to a sketch</h3>
       <div>
       <% @latest_sketches.each_with_index do |sketch, index| %>
       <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
