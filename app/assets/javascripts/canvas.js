@@ -70,7 +70,7 @@ Canvas.prototype.color = function(el, color) {
 Canvas.prototype.submitSketch = function() {
   self = this;
   $(this.el).find('#sketch-submit').on("click", function(){
-    console.log('hi')
+    $(this).disabled = true;
     var sketchInfo = JSON.stringify(self.fabcanvas);
     self.newTreeOldTree(sketchInfo);
   });
@@ -176,6 +176,3 @@ Canvas.prototype.activeBrush = function() {
 $(document).ready(function(){
   var canvas = new Canvas('.format-canvas-elements');
 });
-
-
-
