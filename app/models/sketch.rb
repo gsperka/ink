@@ -11,4 +11,11 @@ class Sketch < ActiveRecord::Base
   def self.latest(num)
     self.all.last(num).reverse
   end
+
+  def as_tree
+    node_hash = {}
+    node_hash[:id] = self.id
+    node_hash[:children] = self.children.map(&:as_tree) unless self.children.empty?
+    return node_hash
+  end
 end
