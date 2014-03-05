@@ -10,6 +10,8 @@ var Canvas = function(el) {
   this.showTools();
   this.submitSketch();
   this.mouseAction();
+  this.activeColor();
+  this.activeBrush();
 };
 
 Canvas.prototype.createCanvas = function(parentSketch) {
@@ -68,7 +70,7 @@ Canvas.prototype.color = function(el, color) {
 Canvas.prototype.submitSketch = function() {
   self = this;
   $(this.el).find('#sketch-submit').on("click", function(){
-    console.log('hi')
+    $(this).disabled = true;
     var sketchInfo = JSON.stringify(self.fabcanvas);
     self.newTreeOldTree(sketchInfo);
   });
@@ -157,9 +159,20 @@ Canvas.prototype.softWarning = function() {
   }
 }
 
+Canvas.prototype.activeColor = function() {
+  $('.color').on('click', function(event) {
+    $('.color').removeClass('active-color');
+    $(this).addClass('active-color');
+  });
+};
+
+Canvas.prototype.activeBrush = function() {
+  $('.brush').on('click', function(event) {
+    $('.brush').removeClass('active-brush');
+    $(this).addClass('active-brush');
+  })
+}
+
 $(document).ready(function(){
   var canvas = new Canvas('.format-canvas-elements');
 });
-
-
-

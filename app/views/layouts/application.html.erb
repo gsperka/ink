@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ink</title>
+  <title>Eversketch</title>
 
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
@@ -13,9 +13,13 @@
 <body>
 
 
-<%= render '/layouts/navbar' %>
+  <%= render '/layouts/navbar' %>
 
-<%= yield %>
+  <div class="page">
+    <%= yield %>
+  </div>
+
+  <%= render '/layouts/footer' %>
 
 </body>
 </html>

@@ -11,57 +11,57 @@
   <% else %>
     <% lineage = [parent] %>
   <% end %>
-  <% lineage.each_with_index do |lineage, index| %>
-    <a href="<%= tree_sketch_path(lineage.tree_id, lineage.id) %>">
-      <p><canvas width="600" height="600" class="lineage" id="sketch-<%= index %>"></canvas></p>
+  <% lineage.each_with_index do |lineage_pic, index| %>
+    <a href="<%= tree_sketch_path(lineage_pic.tree_id, lineage_pic.id) %>">
+      <p><canvas width="600" height="600" class="lineage_pic" id="sketch-<%= index %>"></canvas></p>
     </a>
 
     <script type="text/javascript">
-      var jsonString = '<%= raw lineage.json_data %>';
+      var jsonString = '<%= raw lineage_pic.json_data %>';
       var sketchId = "sketch-" + "<%= index %>";
       sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
       sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
-      $('.lineage').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
+      $('.lineage_pic').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
     </script>
-    <% if index != 2 %><p class='arrow'>&#9660;</p><% end %>
+    <% if lineage_pic != lineage.last %><p class='arrow'>&#9660;</p><% end %>
   <% end %>
 </div>
 <% end %>
 
 <div class="format-canvas-elements">
-  <div id="drawing-tools">  
+  <div id="drawing-tools">
     <div class="st-brush-border">
-      <div id="super-tiny-brush"></div>
+      <button class='brush' id="super-tiny-brush"></button>
     </div>
     <div class="tiny-brush-border">
-      <div id="tiny-brush"></div>
+      <button class='brush active-brush' id="tiny-brush"></button>
     </div>
     <div class="small-brush-border">
-      <div id="small-brush"></div>
+      <button class='brush' id="small-brush"></button>
     </div>
     <div class="medium-brush-border">
-      <div id="medium-brush"></div>
+      <button class='brush' id="medium-brush"></button>
     </div>
     <div class="large-brush-border">
-      <div id="large-brush"></div>
+      <button class='brush' id="large-brush"></button>
     </div>
-    <div class="color" id="red"></div>
-    <div class="color" id="orange"></div>
-    <div class="color" id="yellow"></div>
-    <div class="color" id="green"></div>
-    <div class="color" id="blue"></div>
-    <div class="color" id="purple"></div>
-    <div class="color" id="brown"></div>
-    <div class="color" id="black"></div>
-    <div class="color" id="gray"></div>
-    <div class="color" id="white"></div>
+
+    <button class="color" id="red"></button>
+    <button class="color" id="orange"></button>
+    <button class="color" id="yellow"></button>
+    <button class="color" id="green"></button>
+    <button class="color" id="blue"></button>
+    <button class="color" id="purple"></button>
+    <button class="color" id="brown"></button>
+    <button class="color active-color" id="black"></button>
+    <button class="color" id="gray"></button>
+    <button class="color" id="white"></button>
+    <p id='ink'><span>0</span> pixels</p>
     <button id="clear-canvas">Clear</button>
   </div>
 
   <div id="canvas-div" style='position:relative'>
-    <p id='ink'> You have used <span>0</span> pixels</p>
-
-
+  
     <div class='canvas-border'>
     <canvas width="600" height="600" id="canvas-partial-box"></canvas>
     <% if params[:parent_id] %>

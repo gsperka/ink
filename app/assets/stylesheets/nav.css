@@ -78,6 +78,7 @@ h1 {
 
 
 
+
 @media only screen and (max-width : 2000px) {
   .nav-block{
     margin: 0;
@@ -90,7 +91,7 @@ h1 {
     vertical-align: middle;
   }
   #index-container{
-   width:100%;
+   width:90%;
  }
 }
 

@@ -1,17 +1,28 @@
-#footer{
-  margin-top: -3em;
-  position:relative;
-  height: 4.688em;
-  width:100%;
-  background-color: #333;
-
+html, body {
+  height: 100%;
 }
 
+.page {
+  min-height: 100%;
+  margin-bottom: 35px;
+}
 
-/*#footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
+.page:after {
+  content: "";
+  display: block;
+}
 
-}*/
+#footer, .page:after {
+  height: 35px;
+}
+#footer {
+  background: #333;
+  color: #eee;
+  text-align: center;
+  font-size: 24px;
+}
+
+#footer a {
+  color: #eee;
+}
+

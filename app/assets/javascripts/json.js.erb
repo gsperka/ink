@@ -84,8 +84,8 @@ $(document).ready(function() {
       .attr("xlink:href", function (d) { return '/trees/' + tID + "/sketches/" + d.id; })
       .append("text")
       .text("Family")
-      .attr("y", -20)
-      .attr("x", 0)
+      .attr("y", -5)
+      .attr("x", 5)
       .attr("width", 40) //2*4.5)
       .attr("height", 15)
       .style("fill", "orange")
@@ -97,12 +97,12 @@ $(document).ready(function() {
       .append("text")
       .text("+")
       .attr("class", "clickable")
-      .attr("y", -19)
+      .attr("y", -4)
       .attr("x", 85)
       .attr("width", 40) //2*4.5)
       .attr("height", 15)
       .style("fill", "blue")
-      .style("font-size", 30)
+      .style("font-size", 25)
       .style("fill-opacity", .3)        // set to 1e-6 to make transparent
       ;
 
