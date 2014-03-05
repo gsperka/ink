@@ -9,7 +9,7 @@ li {
   display: inline;
 }
 
-li a{
+button a{
   text-align: center;
   color: #eee;
   text-decoration: none;
@@ -42,6 +42,11 @@ h1 {
   vertical-align: middle;
 }
 
+.nav-buttons{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .nav-create{
   background-color: #E3163F;
 }
@@ -58,7 +63,7 @@ h1 {
   background-color: #1bc43d;
 }
 .nav-ink {
-  margin-right: 47.6em;
+  background-color: #333;
 }
 
 
