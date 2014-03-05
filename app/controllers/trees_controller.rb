@@ -14,7 +14,7 @@ class TreesController < ApplicationController
       tree.update(origin_id: sketch.id)
 
       respond_to do |format|
-        format.json { render :json => {path: tree_path(tree)} }
+        format.json { render :json => {path: tree_sketch_path(tree, sketch)} }
       end
     else
       sketch = Sketch.create(tree_id: tree.id, json_data: params[:sketch_json], user_id: 1)
