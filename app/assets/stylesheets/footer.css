@@ -1,16 +1,28 @@
-#footer{
-  width:100%;
+html, body {
+  height: 100%;
+}
+
+.page {
+  min-height: 100%;
+  margin-bottom: -142px;
+}
+
+.page:after {
+  content: "";
+  display: block;
+}
+
+#footer, .page:after {
+  height: 142px;
+}
+#footer {
+  background: #333;
   color: #eee;
-  background-color: #333;
   text-align: center;
-  clear: both;
+  font-size: 24px;
 }
 
 #footer a {
   color: #eee;
 }
 
-#footer p {
-  background-color: #333;
-  margin: 0;
-}
