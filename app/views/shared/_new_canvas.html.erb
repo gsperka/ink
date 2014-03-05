@@ -1,7 +1,34 @@
+<% if params[:parent_id] %>
+<div class='lineage-pictures'>
+  <h3>Lineage</h3>
+  <% parent = Sketch.find(params[:parent_id]) %>
+  <% if parent.parent %>
+    <% grandparent = parent.parent %>
+    <% lineage = [grandparent, parent] %>
+    <% if grandparent.parent %>
+      <% lineage = [grandparent.parent, grandparent, parent] %>
+    <% end %>
+  <% else %>
+    <% lineage = [parent] %>
+  <% end %>
+  <% lineage.each_with_index do |lineage, index| %>
+    <a href="<%= tree_sketch_path(lineage.tree_id, lineage.id) %>">
+      <p><canvas width="600" height="600" class="lineage" id="sketch-<%= index %>"></canvas></p>
+    </a>
 
+    <script type="text/javascript">
+      var jsonString = '<%= raw lineage.json_data %>';
+      var sketchId = "sketch-" + "<%= index %>";
+      sketchCanvas = new fabric.StaticCanvas(sketchId, {isDrawingMode: false});
+      sketchCanvas.loadFromJSON(jsonString, sketchCanvas.renderAll.bind(sketchCanvas));
+      $('.lineage').css({'height': '150px', 'width': '150px', 'border': '1px solid black'})
+    </script>
+  <% end %>
+</div>
+<% end %>
 
 <div class="format-canvas-elements">
-  <div id="drawing-tools">
+  <div id="drawing-tools">  
     <div class="st-brush-border">
       <div id="super-tiny-brush"></div>
     </div>
