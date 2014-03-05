@@ -8,11 +8,14 @@ border-top: 3.125em solid #333;
 
 .popular {
 float: left;
+width:900px;
+display:inline-block;
 margin-top: .625em;
 text-align: center;
 }
-
-.recently_added {
+.recently-added{
+width: 275px;
+display: inline-block;
 float: right;
 margin-top: .625em;
 text-align: center;
@@ -62,13 +65,22 @@ background-color: #7321d1;
 
 .two-column {
 height: 15em;
-width: 62em;
+width: 74em;
 margin-left: auto;
 margin-right: auto;
 }
 
+.popular canvas{
+  float:left;
+  margin:1em;
+}
+.recently-added canvas{
+  margin-top:1em;
+}
 
+.recent-container{
 
+}
 
 
 
