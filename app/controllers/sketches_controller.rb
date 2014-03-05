@@ -10,7 +10,7 @@ class SketchesController < ApplicationController
 
     if current_user
       sketch.update(user_id: current_user.id)
-      correct_redirect = tree_path(@tree)
+      correct_redirect = tree_sketch_path(@tree, sketch)
     else
       sketch.update(user_id: 1)
       correct_redirect = login_path
