@@ -1,17 +1,16 @@
 #footer{
-  margin-top: -3em;
-  position:relative;
-  height: 4.688em;
   width:100%;
+  color: #eee;
   background-color: #333;
-
+  text-align: center;
+  clear: both;
 }
 
+#footer a {
+  color: #eee;
+}
 
-/*#footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 3em;
-
-}*/
+#footer p {
+  background-color: #333;
+  margin: 0;
+}
