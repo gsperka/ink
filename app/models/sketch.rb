@@ -9,6 +9,6 @@ class Sketch < ActiveRecord::Base
   end
 
   def self.latest(num)
-    self.all.last(num)
+    self.all.last(num).reverse
   end
 end
