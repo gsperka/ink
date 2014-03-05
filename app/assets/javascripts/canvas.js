@@ -10,6 +10,8 @@ var Canvas = function(el) {
   this.showTools();
   this.submitSketch();
   this.mouseAction();
+  this.activeColor();
+  this.activeBrush();
 };
 
 Canvas.prototype.createCanvas = function(parentSketch) {
@@ -155,6 +157,20 @@ Canvas.prototype.softWarning = function() {
   if(Math.round(self.totalDistance) > 10000) {
     $('span').css('color', 'red');
   }
+}
+
+Canvas.prototype.activeColor = function() {
+  $('.color').on('click', function(event) {
+    $('.color').removeClass('active-color');
+    $(this).addClass('active-color');
+  });
+};
+
+Canvas.prototype.activeBrush = function() {
+  $('.brush').on('click', function(event) {
+    $('.brush').removeClass('active-brush');
+    $(this).addClass('active-brush');
+  })
 }
 
 $(document).ready(function(){
