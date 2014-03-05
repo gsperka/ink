@@ -5,10 +5,6 @@ class Tree < ActiveRecord::Base
     self.order(sketches_count: :desc, created_at: :asc).limit(limit)
   end
 
-  def self.by_vote
-
-  end
-
   def random_sketch
     if self.sketches.count < 5
       self.sketches.last
