@@ -5,7 +5,7 @@
     <% if session[:current_user_id] %>
     <div class="nav-buttons">
       <% if current_user.first_name != nil%>
-      <button class="nav-profile nav-block"><%= link_to current_user.first_name + " " + current_user.last_name + "'s Sketches", user_path(session[:current_user_id]) %></button>
+      <button class="nav-profile nav-block"><%= link_to current_user.first_name.capitalize + " " + current_user.last_name.capitalize + "'s Sketches", user_path(session[:current_user_id]) %></button>
       <%else%>
       <button class="nav-profile nav-block"><%= link_to current_user.username + "'s Sketches", user_path(session[:current_user_id]) %></button>
       <%end%>
