@@ -29,3 +29,20 @@
   height:600px;
   overflow: auto;
 }
+
+.empty-children {
+}
+
+.plus_box {
+  width:200px;
+  height:200px;
+  border: 1px dotted black;
+  font-size: 140px;
+  margin: 0 auto;
+}
+
+.plus_a {
+  font-size: 140px;
+  text-decoration: none;
+  color: black;
+}

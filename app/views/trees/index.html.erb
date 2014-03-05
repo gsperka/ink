@@ -1,12 +1,17 @@
+
+<% sketch = Sketch.find(rand(Sketch.count)) %>
+
 <h1></h1>
 
 <div class="button-container">
+  <form action='<%= new_tree_path %>'>
   <button class="collab-button">Start Fresh</button>
-  <button class="random-button">Random</button>
+</form>
+  <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
+    <button class="random-button">Random</button>
+  </form>
 
 </div>
-
-
 
 <div id="index-container">
 
