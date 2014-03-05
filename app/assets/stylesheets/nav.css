@@ -9,6 +9,15 @@ li {
   display: inline;
 }
 
+li a{
+  text-align: center;
+  color: #eee;
+  text-decoration: none;
+  font-size:1.25em;
+  line-height: 75px;
+  display:block;
+}
+
 button a{
   text-align: center;
   color: #eee;
@@ -43,6 +52,7 @@ h1 {
 }
 
 .nav-buttons{
+  display:inline;
   margin-right: auto;
   margin-left: auto;
 }
