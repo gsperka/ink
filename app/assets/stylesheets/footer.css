@@ -19,7 +19,8 @@ html, body {
   background: #333;
   color: #eee;
   text-align: center;
-  font-size: 24px;
+  vertical-align: middle;
+  line-height: 35px;
 }
 
 #footer a {
