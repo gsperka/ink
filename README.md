@@ -13,9 +13,8 @@ Created by:
 
 This is our final group project for Dev Bootcamp (Chicago, IL) - Squirrels 2014
 
-Eversketch began as an idea in which users can collaborate with each other through sketches. There is no limit on the amount of sketches that can
-be created or on the amount of other user's sketches that can be modified. The idea is be able to start your own artistic vision on a blank canvas
-or be able to add your vision to another user's sketch to see how it progresses from there.
+Eversketch inspires social creativity. Our app encourages people to feed off others' imaginations and collaborate on sketches that they can see morph over time.  Once a person creates an original sketch, anyone can click that sketch and add their own interpretation. This results in a brand new sketch, which itself becomes inspiration to others. A fascinating byproduct of this process is visualizing the relationships between connected sketches.
+
 
 ##Install
 
