@@ -10,13 +10,6 @@ h1{
   text-align: center;
 }
 
-#sign-up{
-
-}
-
-#sign-form{
-
-}
 
 input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
   border: none;
@@ -26,6 +19,22 @@ input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
   text-decoration: none;
   padding:7px;
 }
+
+.back-button {
+border: none;
+background-color: #165EE3;
+color: #eee;
+margin-top: 14px;
+text-decoration: none;
+height: 33px;
+}
+
+.back-button a{
+  line-height: 33px;
+  vertical-align: middle;
+}
+
+
 
 #clear-canvas{
   background-color: #E3163F;

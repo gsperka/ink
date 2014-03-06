@@ -1,15 +1,16 @@
-
+<div class="button-container">
 <% sketch = Sketch.random %>
 
 <h1 style='margin-bottom:0;'>Create and add to never-ending sketches.</h1>
 
-<div class="button-container">
+
   <form action='<%= new_tree_path %>'>
   <button style='margin-top:60px;' class="collab-button">Start Fresh</button>
 <% if sketch %>
   </form>
     <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
-      <button style='margin-top:60px' class="random-button" id="home-random-button">Randomize</button>
+
+      <button style='margin-top:60px' class="random-button" id="home-random-button">Randomize!</button>
     </form>
 <% end %>
 
@@ -48,7 +49,7 @@
       <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
        <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>
      </a>
-
+    <p style='margin-top:0px'><%= link_to User.find(sketch.user_id).username, user_path(User.find(sketch.user_id).id) %></p>
 
      <script type="text/javascript">
      var jsonString = '<%= raw sketch.json_data %>';
