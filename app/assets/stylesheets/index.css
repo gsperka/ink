@@ -33,6 +33,7 @@ height: 15em;
 width: 62em;
 margin-left: auto;
 margin-right: auto;
+margin-bottom: 40px;
 }
 
 button{
@@ -51,7 +52,7 @@ padding-top: 2.5em;
 padding-bottom: 2.5em;
 padding-right: 10em;
 padding-left: 10em;
-margin-top: 4em;
+margin-top: 54px;
 float: right;
 box-shadow: 3px 3px 3px #AAA;
 -moz-box-shadow: 3px 3px 3px #AAA;
