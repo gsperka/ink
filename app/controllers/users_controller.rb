@@ -18,9 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user != nil
-      @sketches = Sketch.where(user_id: session[:current_user_id])
-    end
+    @user = User.find(params[:id])
+    @sketches = @user.sketches
   end
 
 end

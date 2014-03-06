@@ -6,6 +6,8 @@
     <a href='<%= tree_sketch_path(@sketch.tree_id, @sketch.parent.id) %>'>
       <canvas width="600" height="600" class="parent" id="sketch_parent"></canvas>
     </a>
+    <p style='margin-top:0px'><%= link_to User.find(@sketch.parent.user_id).username, user_path(User.find(@sketch.parent.user_id).id) %></p>
+
     <script type="text/javascript">
       var jsonString = '<%= raw @sketch.parent.json_data %>';
       var sketchId = "sketch_parent";
@@ -22,6 +24,7 @@
     <a href='<%= new_tree_sketch_path(parent_id: @sketch.id) %>'>
       <canvas width="600" height="600" class="sketch" id="sketch"></canvas>
     </a>
+    <p style='margin-top:0px'><%= link_to User.find(@sketch.user_id).username, user_path(User.find(@sketch.user_id).id) %></p>
     <script type="text/javascript">
       var jsonString = '<%= raw @sketch.json_data %>';
       var sketchId = "sketch";
@@ -39,8 +42,9 @@
       <div class='children_picture'>
       <% @sketch.children.each_with_index do |children, index| %>
         <a href="<%= tree_sketch_path(children.tree_id, children.id) %>">
-          <p><canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas></p>
+          <p style='margin-bottom:0px'><canvas width="600" height="600" class="children" id="sketch-<%= index %>"></canvas></p>
         </a>
+      <p style='margin-top:0px'><%= link_to User.find(children.user_id).username, user_path(User.find(children.user_id).id) %></p>
 
         <script type="text/javascript">
           var jsonString = '<%= raw children.json_data %>';
@@ -57,7 +61,5 @@
           </div>
         </a>
       </div>
-
-
     </div>
 </div>
