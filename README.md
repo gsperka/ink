@@ -71,11 +71,11 @@ A tree is the first sketch that (hopefully) grows into many more sketches. You w
 
 Our first goal was the get an MVP up and running as soon as possible (the goal was on Day 2). After achieving our MVP, we held daily stand-ups to discuss the future features that we would be implementing in our app. We soon discovered that we couldn't implement all of our ideas and that some of the ideas that we really wanted would take a decent amount of time to write. Luckily, we had a great team dynamic and were able to work together to work through the big issues.
 
-Front end: We relied on javascript to render images on the home page that were created by other users.
-* Need more *
+Front end: We relied on javascript to render images on the home page that were created by other users. Extensive css
+was done to create a responsive design and allow the use of Eversketch on laptops and iPads. We created methods in Ruby that render both the most popular sketches as well as the most recent sketches.  
 
-Back end: Our team decided to save the image data as JSON as opposed to png files. The logic behind this was that JSON would take up much less memory
-and would be easier to access for our d3 tree model. In terms of our drawning canvas, we used Fabric.js. This allowed users to access the site on a mobile device (or iPad) and not run into any issues.
+
+Back end: Our team decided to save the image data as JSON as opposed to png files. The logic behind this was that JSON would take up much less memory and would be easier to access for our d3 tree model. In terms of our drawning canvas, we used Fabric.js. This allowed users to access the site on a mobile device (or iPad) and not run into any issues.
 
 ## Final Thoughts
 
