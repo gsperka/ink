@@ -9,12 +9,14 @@ Ink::Application.routes.draw do
     end
   end
 
-  # You can have the root of your site routed with "root"
+post '/sketches/random' => 'sketches#random'
+
   get "google/create"
   get "google/destroy"
   get 'auth/:provider/callback', to: 'google#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'google#destroy', as: 'signout'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
