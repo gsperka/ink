@@ -65,7 +65,7 @@ or be able to add your vision to another user's sketch to see how it progresses 
 
 After the application is up and running, you will have the ability to begin creating a sketch. A new user will have to sign up/log in to have the drawing saved. Once saved, a "tree" will be created.
 
-A tree is the first sketch that (hopefully) grows into many more sketches. You will be unable to make additional sketches to your original copy until someone else adds their vision to your sketch. If you come across any other user's sketches, feel free to add (or remove) any artwork you'd like. You will be able to view the tree's history and see the progression from where the tree started to where it currently is.
+A tree is the first sketch that can grow into many more sketches. You will be unable to make additional sketches to your original copy until someone else adds their vision to your sketch. If you come across any other user's sketches, feel free to add (or remove) any artwork you'd like. You will be able to view the tree's history and see the progression from where the tree started to where it currently is.
 
 ##Design
 
