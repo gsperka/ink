@@ -33,5 +33,11 @@ class SketchesController < ApplicationController
     @sketch = Sketch.find(params[:id])
   end
 
-
+  def random
+    sketch = Sketch.random
+    tree = sketch.tree
+    respond_to do |format|
+      format.json { render :json => {path: tree_sketch_path(tree, sketch) } }
+    end
+  end
 end
