@@ -1,15 +1,15 @@
 
 <% sketch = Sketch.random %>
 
-<h1>Add to and create never-ending sketches.</h1>
+<h1 style='margin-bottom:0;'>Create and add to never-ending sketches.</h1>
 
 <div class="button-container">
   <form action='<%= new_tree_path %>'>
-  <button class="collab-button">Start Fresh</button>
+  <button style='margin-top:60px;' class="collab-button">Start Fresh</button>
 <% if sketch %>
   </form>
     <form action='<%= tree_sketch_path(sketch.tree_id, sketch.id)%>'>
-      <button class="random-button">Random</button>
+      <button style='margin-top:60px' class="random-button">Randomize</button>
     </form>
 <% end %>
 
@@ -43,7 +43,7 @@
     <div class='recently-added'>
       <h2>Recent</h2>
       <h3>Add to a sketch</h3>
-      <div>
+      <div class='recently-added-canvas'>
       <% @latest_sketches.each_with_index do |sketch, index| %>
       <a href="<%= new_tree_sketch_path(tree_id: sketch.tree.id ,parent_id: sketch.id) %>">
        <canvas width="600" height="600" class="most-recent-sketches" id="sketch-<%= index %>"></canvas>

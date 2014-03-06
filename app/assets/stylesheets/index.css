@@ -20,10 +20,13 @@ width: 275px;
 display: inline-block;
 margin-top: .625em;
 text-align: center;
-height:1838px;
-overflow:auto;
+
 }
 
+.recently-added-canvas {
+height:1725px;
+overflow:auto;
+}
 
 .button-container {
 height: 15em;
