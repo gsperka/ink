@@ -28,7 +28,7 @@ or be able to add your vision to another user's sketch to see how it progresses 
                       $ bundle install
 
 - After bundle, you will need to set the environment variables in your terminal. To get the correct values,
-  you will have to visit https://code.google.com/apis/console and set up your own Client ID, Client secret, and make
+  you will have to visit https://code.google.com/apis/console and set up your own Client ID and Client secret. Make
   sure to list your Redirect URI to: http://localhost:3000/auth/google_oauth2/callback
 
       GOOGLE_KEY: Client ID from Google API console
