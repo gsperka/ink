@@ -35,6 +35,7 @@ canvas {
 }
 
 #canvas-div{
+  position:relative;
   display: inline;
   float:left;
   margin:10px;
@@ -42,7 +43,7 @@ canvas {
 
 .format-canvas-elements{
 
-  width: 53%;
+  width: 90%; /*53%*/
   margin-left: auto;
   margin-right: auto;
 }

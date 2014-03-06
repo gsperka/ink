@@ -42,13 +42,22 @@
 }
 
 #drawing-tools{
-  width:150px;
+  position:absolute;
+  top:0;
+  right:0;
+  width:75px;
   display: inline-block;
   margin-top: 60px;
 }
 
 .color:focus {
   box-shadow: inset 0 0 8px #111;
+}
+
+.page {
+  min-height:900px;
+  max-width:80%;
+  margin:0 auto;
 }
 
 .color{
