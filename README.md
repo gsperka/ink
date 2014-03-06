@@ -79,7 +79,7 @@ Back end: Our team decided to save the image data as JSON as opposed to png file
 
 ## Final Thoughts
 
-We wanted to give a big thank you to Dev Bootcamp and all of its instructors over the course of the past 9 weeks: Mike Busch, Jen Myers, Ryan Birones, Nate 'Diesel Powered Dozer' Delage, Zach Rivest, Matt Baker and Dev Bootcamp Mentor Ashish Dixit.
+We wanted to give a big thank you to Dev Bootcamp and all of its instructors over the past 9 weeks: Mike Busch, Jen Myers, Ryan Birones, Nate 'Diesel Powered Dozer' Delage, Zach Rivest, Matt Baker and Dev Bootcamp Mentor Ashish Dixit.
 
 We are extremely pleased with the final product. Looking back, implementing d3 and Google Oauth were a bit more difficult than we originally planned
 but learned a lot during the process. Our team still has many ideas that we would eventually like to roll out. These ideas include:
