@@ -29,4 +29,9 @@ class Tree < ActiveRecord::Base
     end.to_json
   end
 
+  def build_tree()
+    Sketch.find(self.origin_id).as_tree.to_json
+  end
+
 end
+

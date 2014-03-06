@@ -13,6 +13,7 @@
 }
 
 .canvas-border {
+  margin-top:18px;
   border: 2px black solid;
 }
 
@@ -27,7 +28,6 @@ canvas {
 .tree-view-sketches, .most-recent-sketches, .parent, .sketch, .children {
   background-color: white;
 }
-
 
 .canvas-container {
   /*margin-left: auto;
@@ -44,6 +44,7 @@ canvas {
 .format-canvas-elements{
 
   width: 90%; /*53%*/
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -54,11 +55,8 @@ canvas {
 }
 
 #ink {
-  text-align: center;
-}
-
-#clear-canvas {
   margin-left:10px;
+  text-align: left;
 }
 
 .arrow {

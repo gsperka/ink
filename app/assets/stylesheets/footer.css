@@ -6,6 +6,7 @@ html, body {
   min-height: 100%;
   margin-bottom: -142px;
   position:relative;
+
 }
 
 .page:after {
@@ -14,7 +15,7 @@ html, body {
 }
 
 #footer, .page:after {
-  height: 142px;
+  height: 35px;
 }
 #footer {
   background: #333;

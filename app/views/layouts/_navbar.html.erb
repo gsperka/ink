@@ -1,13 +1,14 @@
-
-
-
 <nav >
   <ul>
     <li class="nav-ink nav-block"><%= link_to 'Eversketch', root_path, :id => 'logo' %></li>
 
     <% if session[:current_user_id] %>
     <div class="nav-buttons">
-      <button class="nav-profile nav-block"><%= link_to 'Welcome,' + ' ' + current_user.username, user_path(session[:current_user_id]) %></button>
+      <% if current_user.first_name != nil%>
+      <button class="nav-profile nav-block"><%= link_to current_user.first_name.capitalize + " " + current_user.last_name.capitalize + "'s Sketches", user_path(session[:current_user_id]) %></button>
+      <%else%>
+      <button class="nav-profile nav-block"><%= link_to current_user.username + "'s Sketches", user_path(session[:current_user_id]) %></button>
+      <%end%>
       <button class="nav-create nav-block"><%= link_to 'Create New Sketch', new_tree_path %></button>
       <li class="nav-signout nav-block"><%= link_to 'Sign Out', logout_path %></li>
     <%else%>

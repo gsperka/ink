@@ -30,21 +30,20 @@
 
 <div class="format-canvas-elements">
   <div id="drawing-tools">
-
     <div class="st-brush-border">
-      <button id="super-tiny-brush"></button>
+      <button class='brush' id="super-tiny-brush"></button>
     </div>
     <div class="tiny-brush-border">
-      <button id="tiny-brush"></button>
+      <button class='brush active-brush' id="tiny-brush"></button>
     </div>
     <div class="small-brush-border">
-      <button id="small-brush"></button>
+      <button class='brush' id="small-brush"></button>
     </div>
     <div class="medium-brush-border">
-      <button id="medium-brush"></button>
+      <button class='brush' id="medium-brush"></button>
     </div>
     <div class="large-brush-border">
-      <button id="large-brush"></button>
+      <button class='brush' id="large-brush"></button>
     </div>
 
     <button class="color" id="red"></button>
@@ -54,16 +53,15 @@
     <button class="color" id="blue"></button>
     <button class="color" id="purple"></button>
     <button class="color" id="brown"></button>
-    <button class="color" id="black"></button>
+    <button class="color active-color" id="black"></button>
     <button class="color" id="gray"></button>
     <button class="color" id="white"></button>
+    <p id='ink'><span>0</span> pixels</p>
     <button id="clear-canvas">Clear</button>
   </div>
 
   <div id="canvas-div" style='position:relative'>
-    <p id='ink'> You have used <span>0</span> pixels</p>
-
-
+  
     <div class='canvas-border'>
     <canvas width="600" height="600" id="canvas-partial-box"></canvas>
     <% if params[:parent_id] %>
