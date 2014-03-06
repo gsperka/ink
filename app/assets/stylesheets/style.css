@@ -10,13 +10,6 @@ h1{
   text-align: center;
 }
 
-#sign-up{
-
-}
-
-#sign-form{
-
-}
 
 input[type="submit"], #sketch-submit, #clear-canvas, .log-in {
   border: none;

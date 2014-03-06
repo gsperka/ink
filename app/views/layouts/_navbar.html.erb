@@ -10,11 +10,14 @@
       <button class="nav-profile nav-block"><%= link_to current_user.username + "'s Sketches", user_path(session[:current_user_id]) %></button>
       <%end%>
       <button class="nav-create nav-block"><%= link_to 'Create New Sketch', new_tree_path %></button>
+      <button class="nav-random nav-block" id="nav-random-button"><a>Random Sketch</a></button>
       <button class="nav-signout nav-block"><%= link_to 'Sign Out', logout_path %></button>
+
     <%else%>
-      <button class="nav-signout nav-block"><%= link_to 'Sign Up', new_user_path %></button>
-      <button class="nav-profile nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
-      <button class="nav-create nav-block"><%= link_to 'Log In', login_path, :id => 'login' %></button>
+
+      <button class="nav-signup nav-block"><%= link_to 'Sign Up', new_user_path %></button>
+      <button class="google-signin nav-block"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></button>
+      <button class="nav-login nav-block"><%= link_to 'Sign In', login_path, :id => 'login' %></button>
     <%end%>
   </div>
   </ul>
