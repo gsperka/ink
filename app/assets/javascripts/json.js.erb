@@ -38,7 +38,7 @@ $(document).ready(function() {
           }
         }
 
-        root.children.forEach(collapse);
+        if (root.children) {root.children.forEach(collapse)};
         update(root);
 
   // what is this for?
