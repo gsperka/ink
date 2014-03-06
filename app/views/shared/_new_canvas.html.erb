@@ -1,4 +1,6 @@
+<div class="new-sketch-container">
 <% if params[:parent_id] %>
+
 <div class='lineage-pictures'>
   <h3>Lineage</h3>
   <% parent = Sketch.find(params[:parent_id]) %>
@@ -61,7 +63,7 @@
   </div>
 
   <div id="canvas-div" style='position:relative'>
-  
+
     <div class='canvas-border'>
     <canvas width="600" height="600" id="canvas-partial-box"></canvas>
     <% if params[:parent_id] %>
@@ -74,4 +76,5 @@
       <button id="sketch-submit">Save this sketch</button>
   </div>
   </div>
+</div>
 </div>

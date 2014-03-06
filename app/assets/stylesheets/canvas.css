@@ -35,13 +35,16 @@ canvas {
 }
 
 #canvas-div{
+  position:relative;
   display: inline;
   float:left;
   margin:10px;
 }
 
 .format-canvas-elements{
-  width: 780px;
+
+  width: 90%; /*53%*/
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -59,4 +62,12 @@ canvas {
 .arrow {
   text-align: center;
   font-size:25px;
+}
+
+.new-sketch-container{
+  min-height: 100%;
+  margin-bottom: 35px;
+  width:1000px;
+  margin-left:auto;
+  margin-right:auto;
 }
