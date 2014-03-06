@@ -27,6 +27,7 @@ Canvas.prototype.showTools = function() {
 };
 
 Canvas.prototype.clearButton = function() {
+  self = this
   $(this.el).find('#clear-canvas').on('click', function(event) {
     document.location.reload();
   });
