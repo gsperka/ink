@@ -96,8 +96,12 @@ describe 'home page' do
 
       it "has a random button" do
         visit '/'
-
         expect(page).to have_content('Random')
+      end
+
+      it "has 400x400px tree canvases" do
+        visit '/'
+        expect(page.css)
       end
     end
   end
