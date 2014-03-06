@@ -1,7 +1,7 @@
 class TreesController < ApplicationController
   def index
     @popular_trees = Tree.by_sketch_count(8)
-    @latest_sketches = Sketch.latest(100)
+    @latest_sketches = Sketch.latest(25)
   end
 
   def new
