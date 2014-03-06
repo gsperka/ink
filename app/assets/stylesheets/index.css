@@ -7,18 +7,21 @@ border-top: 3.125em solid #333;
 }
 
 .popular {
-/*float: left;*/
+float: left;
+
 width:900px;
 display:inline-block;
 margin-top: .625em;
 text-align: center;
 }
+
 .recently-added{
 width: 275px;
 display: inline-block;
-float: right;
 margin-top: .625em;
 text-align: center;
+height:1838px;
+overflow:auto;
 }
 
 
@@ -80,6 +83,7 @@ margin-right: auto;
   float:left;
   margin:1em;
 }
+
 .recently-added canvas{
   margin-top:1em;
 }
