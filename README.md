@@ -13,7 +13,7 @@ Created by:
 
 This is our final group project for Dev Bootcamp (Chicago, IL) - Squirrels 2014
 
-Eversketch begin as an idea in which users can collaborate with each other through sketches. There is no limit on the amount of sketches that can
+Eversketch began as an idea in which users can collaborate with each other through sketches. There is no limit on the amount of sketches that can
 be created or on the amount of other user's sketches that can be modified. The idea is be able to start your own artistic vision on a blank canvas
 or be able to add your vision to another user's sketch to see how it progresses from there.
 
